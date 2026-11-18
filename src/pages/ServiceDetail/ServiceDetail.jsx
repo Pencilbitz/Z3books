@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import textbookBookMockup from '../../assets/images/textbook-anaimalai-book.png'
-import textbookHeroImg from '../../assets/images/textbook-hero-desk.png'
+import textbookHeroImg from '../../assets/images/textbook-hero-finance-city.png'
 import {
   ArrowRight,
   Check,
@@ -252,7 +252,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                     <div className="figma-card-image-wrap">
                       <img
                         src={textbookHeroImg}
-                        alt="Turn your course material into a Published Textbook"
+                        alt="Textbooks, laptop and financial charts on a desk overlooking a city at sunset"
                         className="figma-card-image"
                       />
                     </div>
