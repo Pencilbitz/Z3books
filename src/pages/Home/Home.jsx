@@ -5,12 +5,12 @@ import Hero from './sections/Hero/Hero.jsx'
 import HowItWorks from './sections/HowItWorks/HowItWorks.jsx'
 import Services from './sections/Services/Services.jsx'
 
-export default function Home() {
+export default function Home({ onSelectService }) {
   return (
     <>
       <Hero />
       <About />
-      <Services />
+      <Services onSelectService={onSelectService} />
       <HowItWorks />
       <Books />
       <CallToAction />

@@ -199,3 +199,70 @@ export const BooksSolid = (p) => (
     <path d="M1 21h22v1.5H1z" />
   </svg>
 )
+
+export const ChevronDown = (p) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" {...base} strokeWidth={2.2} {...p}>
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+)
+
+export const Textbook = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    <path d="M8 7h8M8 11h6M8 15h4" />
+  </svg>
+)
+
+export const Patent = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2v6h6M8 11h5M8 15h3" />
+    <circle cx="16" cy="16" r="3" />
+    <path d="M18 18.5l1.5 2.5-2-.6-2 .6.8-2.5" />
+  </svg>
+)
+
+export const ShieldCheck = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <circle cx="12" cy="11.5" r="3.5" />
+    <path d="M13.5 10.5a2 2 0 0 0-2.8 0 2 2 0 0 0 0 2.8 2 2 0 0 0 2.8 0" />
+  </svg>
+)
+
+export const ConferencePaper = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12.5v4.5c3 3 9 3 12 0v-4.5" />
+  </svg>
+)
+
+export const BookChapter = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5z" />
+    <path d="M12 6.5v13" />
+    <path d="M15.5 8.5h3.5M15.5 11.5h2.5" />
+  </svg>
+)
+
+export const EventManagement = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <rect x="3" y="4" width="18" height="18" rx="2" />
+    <path d="M16 2v4M8 2v4M3 10h18" />
+    <circle cx="8" cy="14" r="1" fill="currentColor" />
+    <circle cx="12" cy="14" r="1" fill="currentColor" />
+    <circle cx="16" cy="14" r="1" fill="currentColor" />
+    <circle cx="8" cy="18" r="1" fill="currentColor" />
+    <circle cx="12" cy="18" r="1" fill="currentColor" />
+  </svg>
+)
+
+export const Upskilling = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <polyline points="15 11 18 8 22 12" />
+    <polyline points="18 8 22 8 22 12" />
+  </svg>
+)

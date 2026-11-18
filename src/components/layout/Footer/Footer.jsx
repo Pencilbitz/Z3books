@@ -7,7 +7,20 @@ import './Footer.css'
 const YEAR = new Date().getFullYear()
 const SOCIAL_ICONS = { LinkedIn, Facebook, YouTube, X: XLogo }
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const handleNavClick = (href) => (e) => {
+    e.preventDefault()
+    if (onNavigate) {
+      if (href.startsWith('#service/')) {
+        onNavigate('service', href.replace('#service/', ''))
+      } else {
+        onNavigate('home', href)
+      }
+    } else {
+      window.location.hash = href
+    }
+  }
+
   return (
     <footer id="contact" className="site-footer">
       <svg className="footer-wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
@@ -29,8 +42,8 @@ export default function Footer() {
           <div className="footer-box">
             <h4>Zedd 3+ Books | Book Publishing, Printing and eBook Services</h4>
             <p>
-              Publish your book with Zedd 3+ Books. We offer self-publishing support, ISBN, editing,
-              design, printing, eBooks and distribution.
+              Publish your work with Zedd 3+ Books. We offer textbook publishing, patent support,
+              copyrights, IEEE publications, Scopus book chapters, educational events, and upskilling.
             </p>
             <div className="socials">
               {SOCIAL_LINKS.map(({ label, href }) => {
@@ -49,7 +62,7 @@ export default function Footer() {
             <ul>
               {NAV_LINKS.map((n) => (
                 <li key={n.label}>
-                  <a href={n.href}>{n.label}</a>
+                  <a href={n.href} onClick={handleNavClick(n.href)}>{n.label}</a>
                 </li>
               ))}
             </ul>
@@ -59,8 +72,10 @@ export default function Footer() {
             <h4>Services</h4>
             <ul>
               {SERVICES.map((s) => (
-                <li key={s.title}>
-                  <a href="#services">{s.title}</a>
+                <li key={s.id || s.title}>
+                  <a href={`#service/${s.id}`} onClick={handleNavClick(`#service/${s.id}`)}>
+                    {s.title}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -81,7 +96,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p className="copyright">© {YEAR} Zedd 3+ Books. All rights reserved.</p>
-          <a href="#home" className="back-top">
+          <a href="#home" className="back-top" onClick={handleNavClick('#home')}>
             Back to top <ArrowUp />
           </a>
         </div>
