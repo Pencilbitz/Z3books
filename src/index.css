@@ -1,0 +1,92 @@
+:root {
+  --maroon: #8b1530;
+  --maroon-dark: #6a0e23;
+  --maroon-deep: #520a1b;
+  --cream: #fdf6ee;
+  --cream-2: #f8ece0;
+  --sand: #f1dfcb;
+  --gold: #e8b866;
+  --ink: #17121a;
+  --text: #3b3438;
+  --muted: #5e5559;
+  --card: #fffdfb;
+  --shadow-sm: 0 6px 18px rgba(110, 40, 30, 0.08);
+  --shadow-md: 0 14px 36px rgba(110, 40, 30, 0.12);
+  --radius: 14px;
+  --font: 'Outfit', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  color-scheme: light;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
