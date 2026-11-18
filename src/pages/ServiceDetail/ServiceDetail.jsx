@@ -16,6 +16,7 @@ import {
 } from '../../components/common/Icons.jsx'
 import { CONTACT } from '../../data/contact.js'
 import { SERVICES } from '../../data/services.js'
+import TrademarkServiceContent from './TrademarkServiceContent.jsx'
 import './ServiceDetail.css'
 
 const OVERVIEW_PILLS = [
@@ -169,7 +170,16 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   }
 
   const isTextbook = service.id === 'textbook-publications'
+  const isTrademarkService = service.id === 'trademarks-copyright-services'
   const Icon = service.icon
+
+  if (isTrademarkService) {
+    return (
+      <article className="service-detail-page trademark-service-detail-page">
+        <TrademarkServiceContent service={service} onNavigate={onNavigate} />
+      </article>
+    )
+  }
 
   return (
     <article className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''}`}>
