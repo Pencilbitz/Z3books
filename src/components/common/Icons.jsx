@@ -206,6 +206,36 @@ export const ChevronDown = (p) => (
   </svg>
 )
 
+export const ChevronUp = (p) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" {...base} strokeWidth={2.2} {...p}>
+    <path d="M18 15l-6-6-6 6" />
+  </svg>
+)
+
+export const Users = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...p}>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+)
+
+export const PriceTag = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...p}>
+    <rect x="2" y="6" width="20" height="12" rx="2" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M6 12h.01M18 12h.01" />
+  </svg>
+)
+
+export const CheckCircle = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} {...p}>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M8 12l2.5 2.5L16 9" />
+  </svg>
+)
+
 export const Textbook = (p) => (
   <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />

@@ -34,6 +34,7 @@
   padding: 6px 0;
   text-decoration: none;
   transition: color 0.2s ease;
+  position: relative;
 }
 
 .main-nav a:hover,
@@ -43,6 +44,17 @@
 
 .main-nav a.active {
   font-weight: 600;
+}
+
+.main-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--maroon);
+  border-radius: 2px;
 }
 
 .main-nav .nav-cta-mobile {
@@ -77,6 +89,7 @@
   color: var(--text);
   cursor: pointer;
   transition: color 0.2s ease;
+  position: relative;
 }
 
 .nav-link-btn:hover,
@@ -86,6 +99,17 @@
 
 .nav-link-btn.active {
   font-weight: 600;
+}
+
+.nav-link-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--maroon);
+  border-radius: 2px;
 }
 
 .dropdown-chevron {

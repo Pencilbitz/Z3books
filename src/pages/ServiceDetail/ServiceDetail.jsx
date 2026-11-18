@@ -1,13 +1,145 @@
 import { useState } from 'react'
-import { ArrowRight, Check, Mail, Phone, Pin } from '../../components/common/Icons.jsx'
+import textbookBookMockup from '../../assets/images/textbook-anaimalai-book.png'
+import textbookHeroImg from '../../assets/images/textbook-hero-desk.png'
+import {
+  ArrowRight,
+  Check,
+  CheckCircle,
+  ChevronDown,
+  ChevronUp,
+  Mail,
+  OpenBook,
+  Phone,
+  Pin,
+  PriceTag,
+  Users,
+} from '../../components/common/Icons.jsx'
 import { CONTACT } from '../../data/contact.js'
 import { SERVICES } from '../../data/services.js'
 import './ServiceDetail.css'
+
+const OVERVIEW_PILLS = [
+  'Peer-Review Ready',
+  'University Library Cataloging',
+  'LaTeX & InDesign Math Typesetting',
+  'Official ISBN & Barcode',
+]
+
+const TIMELINE_STAGES = [
+  {
+    step: 1,
+    tag: 'STAGE 01 • SHARE',
+    title: 'Share',
+    desc: 'Share your manuscript and tell us about your students.',
+  },
+  {
+    step: 2,
+    tag: 'STAGE 02 • PLAN',
+    title: 'Plan & Review',
+    desc: 'We review it and suggest a clear plan with a quote.',
+  },
+  {
+    step: 3,
+    tag: 'STAGE 03 • PREPARE',
+    title: 'Prepare & Design',
+    desc: 'Our editors and designers prepare your book.',
+  },
+  {
+    step: 4,
+    tag: 'STAGE 04 • APPROVE',
+    title: 'Approve',
+    desc: 'You approve the cover, layout and proofs.',
+  },
+  {
+    step: 5,
+    tag: 'STAGE 05 • PUBLISH',
+    title: 'Publish & Deliver',
+    desc: 'We print or publish your textbook and help it reach readers.',
+  },
+]
+
+const AUDIENCE_PILLS = [
+  'Professors',
+  'School and college teachers',
+  'Training institutes',
+  'Subject experts',
+  'Departments preparing course books',
+]
+
+const AUDIENCE_CARDS = [
+  {
+    title: 'University Professors',
+    desc: 'Transform your specialized lecture series and syllabus notes into authoritative course books adopted across multiple colleges and universities.',
+  },
+  {
+    title: 'Medical & Engineering Faculties',
+    desc: 'Publish comprehensive technical manuals, lab companions, and clinical handbooks with uncompromising diagram clarity and color fidelity.',
+  },
+  {
+    title: 'Coaching Institutes & Academies',
+    desc: 'Standardize competitive exam prep modules, question banks, and solution manuals with institutional branding and bulk dispatch capabilities.',
+  },
+  {
+    title: 'School Education Boards',
+    desc: 'Produce grade-appropriate pedagogical texts, workbooks, and teacher resource guides strictly aligned with regional and national frameworks.',
+  },
+  {
+    title: 'Scholars & Researchers',
+    desc: 'Preserve your field discoveries, regional studies, and domain inquiries in durable archival hardcovers indexed for academic discovery.',
+  },
+  {
+    title: 'Monograph & Thesis Authors',
+    desc: 'Convert your doctoral dissertation into an accessible, commercially viable scholarly monograph with full academic provenance.',
+  },
+]
+
+const TRUST_CARDS = [
+  {
+    icon: Users,
+    title: 'One Team',
+    desc: 'One team for every step, from draft to delivery',
+  },
+  {
+    icon: PriceTag,
+    title: 'Transparent',
+    desc: 'Clear pricing with no hidden charges',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Full Approval',
+    desc: 'You approve each stage before it moves forward',
+  },
+  {
+    icon: OpenBook,
+    title: 'Study-Built',
+    desc: 'Layouts built for study: readable fonts, clear headings, neat tables',
+  },
+]
+
+const TEXTBOOK_FAQS = [
+  {
+    q: 'Can I publish a textbook if I have only lecture notes?',
+    a: 'Yes. We review your notes and help you organise them into chapters before editing begins.',
+  },
+  {
+    q: 'Do I keep the rights to my textbook?',
+    a: 'Yes. You retain full copyright and intellectual property rights to your textbook. We work purely as your publishing production and distribution partner.',
+  },
+  {
+    q: 'Can I order a small number of printed copies?',
+    a: 'Yes. We support print-on-demand and flexible short runs starting from 25 copies up to thousands for institutional batches.',
+  },
+  {
+    q: 'How long does it take to publish a textbook?',
+    a: 'Typically 4 to 8 weeks depending on the length of the manuscript, complexity of equations or diagrams, and review turnaround times.',
+  },
+]
 
 export default function ServiceDetail({ serviceId, onNavigate }) {
   const service = SERVICES.find((s) => s.id === serviceId) || SERVICES[0]
   const otherServices = SERVICES.filter((s) => s.id !== service.id)
 
+  const [openFaq, setOpenFaq] = useState(0) // First FAQ open by default as in screenshot
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -27,285 +159,566 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     setFormSubmitted(true)
   }
 
+  const scrollToContact = (e) => {
+    e.preventDefault()
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const toggleFaq = (idx) => {
+    setOpenFaq((prev) => (prev === idx ? null : idx))
+  }
+
+  const isTextbook = service.id === 'textbook-publications'
   const Icon = service.icon
 
   return (
-    <article className="service-detail-page">
-      {/* Top Banner / Breadcrumb */}
-      <section className="service-hero">
-        <div className="container">
-          <nav className="breadcrumb" aria-label="Breadcrumb">
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault()
-                if (onNavigate) onNavigate('home', '#home')
-                else window.location.hash = '#home'
-              }}
-            >
-              Home
-            </a>
-            <span className="bc-sep">/</span>
-            <a
-              href="#services"
-              onClick={(e) => {
-                e.preventDefault()
-                if (onNavigate) onNavigate('home', '#services')
-                else window.location.hash = '#services'
-              }}
-            >
-              Services
-            </a>
-            <span className="bc-sep">/</span>
-            <span className="bc-current">{service.title}</span>
-          </nav>
+    <article className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''}`}>
+      {isTextbook ? (
+        /* ====================================================================
+           TEXTBOOK PUBLICATIONS: 100% COMPLETE FIGMA SPECIFICATION (IN ORDER)
+           ==================================================================== */
+        <>
+          {/* 1. Hero Section (Figma Screenshot 1) */}
+          <section className="figma-textbook-hero">
+            <div className="container figma-hero-inner">
+              <nav className="figma-breadcrumb" aria-label="Breadcrumb">
+                <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (onNavigate) onNavigate('home', '#home')
+                    else window.location.hash = '#home'
+                  }}
+                >
+                  Home
+                </a>
+                <span className="figma-bc-sep">&gt;</span>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (onNavigate) onNavigate('home', '#services')
+                    else window.location.hash = '#services'
+                  }}
+                >
+                  Services
+                </a>
+                <span className="figma-bc-sep">&gt;</span>
+                <span className="figma-bc-current">Textbook Publications</span>
+              </nav>
 
-          <div className="service-hero-content">
-            <div className="service-hero-heading">
-              <span className="service-hero-icon">
-                <Icon width="34" height="34" />
-              </span>
-              <div>
-                <h1>{service.title}</h1>
-                <p className="service-hero-tagline">{service.text}</p>
+              <div className="figma-hero-grid">
+                <div className="figma-hero-left">
+                  <div className="figma-division-pill">
+                    <span className="figma-pill-icon">
+                      <OpenBook width="14" height="14" />
+                    </span>
+                    <span className="figma-pill-text">SCHOLARLY PRESS DIVISION</span>
+                  </div>
+
+                  <h1 className="figma-hero-title">
+                    Turn your course material<br />
+                    into a <span className="figma-accent-crimson">Published Textbook</span>
+                  </h1>
+
+                  <p className="figma-hero-subtitle">
+                    Editing, ISBN, design, printing and distribution, handled by one team.
+                  </p>
+
+                  <div className="figma-hero-actions">
+                    <a
+                      href="#contact"
+                      className="btn-figma-primary"
+                      onClick={scrollToContact}
+                    >
+                      <span>Publish With Us</span>
+                      <span className="figma-arrow-circle">
+                        <ArrowRight width="13" height="13" strokeWidth={2.4} />
+                      </span>
+                    </a>
+
+                    <a
+                      href="#contact"
+                      className="btn-figma-outline"
+                      onClick={scrollToContact}
+                    >
+                      Talk to Our Team
+                    </a>
+                  </div>
+                </div>
+
+                <div className="figma-hero-right">
+                  <div className="figma-visual-card">
+                    <div className="figma-card-image-wrap">
+                      <img
+                        src={textbookHeroImg}
+                        alt="Turn your course material into a Published Textbook"
+                        className="figma-card-image"
+                      />
+                    </div>
+                    <div className="figma-card-badge-box">
+                      <span className="figma-volume-title">VOLUME EDITION</span>
+                      <span className="figma-volume-sub">Standard Academic Archival Format</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Main Content Layout */}
-      <div className="container service-main-container">
-        <div className="service-content-grid">
-          {/* Left Column: Overview, Features, Workflow */}
-          <div className="service-primary-content">
-            {/* Overview Section */}
-            <section className="service-card-section">
-              <h2 className="section-subtitle">Service Overview</h2>
-              <p className="service-overview-text">{service.overview}</p>
+          {/* 2. Overview Banner (Figma Screenshot 2) */}
+          <section className="figma-overview-section">
+            <div className="container">
+              <div className="figma-overview-panel">
+                <span className="figma-overview-label">OVERVIEW</span>
+                <p className="figma-overview-p">
+                  A good textbook explains a subject clearly and stays useful for years.
+                  We help teachers, professors and subject experts turn their notes and
+                  course material into a complete, professionally produced textbook.
+                  Our team looks after every stage of production, so you can focus on the
+                  content while we handle the details.
+                </p>
 
-              {service.audience && (
-                <div className="target-audience-box">
-                  <h3>Ideal For:</h3>
-                  <div className="audience-pills">
-                    {service.audience.map((aud) => (
-                      <span key={aud} className="audience-pill">
-                        {aud}
-                      </span>
+                <div className="figma-overview-pills">
+                  {OVERVIEW_PILLS.map((pill) => (
+                    <span key={pill} className="figma-ov-pill">
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. Publication Architecture - The Book's Journey Timeline (Figma Screenshot 2) */}
+          <section className="figma-timeline-section">
+            <div className="container">
+              <div className="figma-timeline-header">
+                <span className="figma-sub-tag">PUBLICATION ARCHITECTURE</span>
+                <h2 className="figma-timeline-title">The Book&apos;s Journey Timeline</h2>
+                <p className="figma-timeline-desc">
+                  Step-by-step evolution from manuscript draft to worldwide institutional adoption.
+                </p>
+              </div>
+
+              <div className="figma-timeline-grid">
+                {/* Left: 3D Book Presentation Card */}
+                <div className="figma-book-card">
+                  <div className="figma-book-mockup-wrapper">
+                    <img
+                      src={textbookBookMockup}
+                      alt="Whispers on Mount Anaimalai by Arun Prakash"
+                      className="figma-book-mockup-img"
+                    />
+                  </div>
+                  <div className="figma-book-card-caption">
+                    <span className="figma-caption-tag">
+                      FROM RAW DRAFT TO UNIVERSITY LIBRARY SHELF
+                    </span>
+                    <span className="figma-caption-sub">
+                      Archival paper stock, archival binding, index-registered edition.
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right: Vertical 5-Stage Timeline */}
+                <div className="figma-vertical-timeline">
+                  <div className="figma-timeline-line" aria-hidden="true" />
+                  <div className="figma-timeline-stages">
+                    {TIMELINE_STAGES.map((st) => (
+                      <div key={st.step} className="figma-stage-row">
+                        <span className="figma-stage-node">{st.step}</span>
+                        <div className="figma-stage-card">
+                          <span className="figma-stage-tag">{st.tag}</span>
+                          <h3 className="figma-stage-title">{st.title}</h3>
+                          <p className="figma-stage-desc">{st.desc}</p>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
-              )}
-            </section>
-
-            {/* Key Features & Deliverables */}
-            <section className="service-card-section">
-              <h2 className="section-subtitle">What We Offer & Key Deliverables</h2>
-              <div className="features-grid">
-                {service.features.map((feat) => (
-                  <div key={feat.title} className="feature-item">
-                    <span className="feature-bullet">
-                      <Check width="14" height="14" />
-                    </span>
-                    <div>
-                      <h4>{feat.title}</h4>
-                      <p>{feat.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* 4-Step Process Roadmap */}
-            <section className="service-card-section">
-              <h2 className="section-subtitle">Our Proven Step-by-Step Workflow</h2>
-              <div className="workflow-steps">
-                {service.steps.map((st) => (
-                  <div key={st.step} className="workflow-step-card">
-                    <div className="step-num">{st.step}</div>
-                    <div className="step-content">
-                      <h4>{st.title}</h4>
-                      <p>{st.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Key Benefits */}
-            <section className="service-card-section">
-              <h2 className="section-subtitle">Why Partner with Zedd 3+ Books?</h2>
-              <ul className="benefits-checklist">
-                {service.benefits.map((b) => (
-                  <li key={b}>
-                    <span className="benefit-icon">
-                      <Check width="13" height="13" />
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          {/* Right Column: Sticky Enquiry Card & Contact */}
-          <aside className="service-sidebar">
-            <div className="service-enquiry-card">
-              <h3>Enquire About {service.title}</h3>
-              <p>Get in touch with our publication & academic consulting experts today.</p>
-
-              {formSubmitted ? (
-                <div className="enquiry-success">
-                  <span className="success-icon">✓</span>
-                  <h4>Thank You!</h4>
-                  <p>We received your inquiry regarding <strong>{service.title}</strong>. Our team will reach out within 24 hours.</p>
-                  <button
-                    type="button"
-                    className="btn btn-secondary btn-sm"
-                    onClick={() => setFormSubmitted(false)}
-                  >
-                    Submit Another Query
-                  </button>
-                </div>
-              ) : (
-                <form className="service-form" onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      placeholder="Dr. / Prof. / Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="name@university.edu / mail.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone / WhatsApp *</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="institution">University / Organization</label>
-                    <input
-                      id="institution"
-                      name="institution"
-                      type="text"
-                      placeholder="College / Institute name"
-                      value={formData.institution}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="message">Your Requirements / Project Details</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows="3"
-                      placeholder={`Tell us about your ${service.title} requirements...`}
-                      value={formData.message}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <button type="submit" className="btn btn-primary btn-block">
-                    Request Consultation <ArrowRight />
-                  </button>
-                </form>
-              )}
-
-              <div className="sidebar-direct-contact">
-                <p className="or-divider"><span>OR REACH DIRECTLY</span></p>
-                <a href={CONTACT.phoneHref} className="sidebar-contact-pill">
-                  <Phone width="14" height="14" /> {CONTACT.phone}
-                </a>
-                <a href={`mailto:${CONTACT.email}?subject=Inquiry: ${encodeURIComponent(service.title)}`} className="sidebar-contact-pill">
-                  <Mail width="14" height="14" /> {CONTACT.email}
-                </a>
-                <div className="sidebar-address">
-                  <Pin width="14" height="14" />
-                  <span>{CONTACT.address}</span>
-                </div>
               </div>
             </div>
-          </aside>
-        </div>
+          </section>
 
-        {/* Other Services Navigation Grid */}
-        <section className="other-services-section">
-          <div className="other-services-header">
-            <div>
-              <span className="accent-label">Explore More</span>
-              <h2>Other Academic & Publishing Services</h2>
+          {/* 4. Who This Pathway Serves (Figma Screenshot 2) */}
+          <section className="figma-serves-section">
+            <div className="container">
+              <div className="figma-serves-header">
+                <h2 className="figma-serves-title">Who This Pathway Serves</h2>
+                <div className="figma-serves-pills">
+                  {AUDIENCE_PILLS.map((p) => (
+                    <span key={p} className="figma-serve-pill">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="figma-serves-grid">
+                {AUDIENCE_CARDS.map((card) => (
+                  <article key={card.title} className="figma-serve-card">
+                    <h3>{card.title}</h3>
+                    <p>{card.desc}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <a
-              href="#services"
-              className="btn btn-secondary btn-sm"
-              onClick={(e) => {
-                e.preventDefault()
-                if (onNavigate) onNavigate('home', '#services')
-                else window.location.hash = '#services'
-              }}
-            >
-              All Services Overview <ArrowRight />
-            </a>
-          </div>
+          </section>
 
-          <div className="other-services-grid">
-            {otherServices.map((item) => {
-              const ItemIcon = item.icon
-              return (
+          {/* 5. Why Authors & Institutions Trust Us (Figma Screenshot 3) */}
+          <section className="figma-trust-section">
+            <div className="container">
+              <h2 className="figma-trust-title">Why Authors &amp; Institutions Trust Us</h2>
+              <div className="figma-trust-grid">
+                {TRUST_CARDS.map(({ icon: CardIcon, title, desc }) => (
+                  <article key={title} className="figma-trust-card">
+                    <span className="figma-trust-icon">
+                      <CardIcon width="20" height="20" />
+                    </span>
+                    <h3>{title}</h3>
+                    <p>{desc}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 6. Frequently Asked Questions (Figma Screenshot 3) */}
+          <section className="figma-faq-section">
+            <div className="container">
+              <h2 className="figma-faq-title">Frequently Asked Questions</h2>
+              <div className="figma-faq-list">
+                {TEXTBOOK_FAQS.map((faq, idx) => {
+                  const isOpen = openFaq === idx
+                  return (
+                    <div
+                      key={faq.q}
+                      className={`figma-faq-item ${isOpen ? 'is-open' : ''}`}
+                    >
+                      <button
+                        type="button"
+                        className="figma-faq-question"
+                        aria-expanded={isOpen}
+                        onClick={() => toggleFaq(idx)}
+                      >
+                        <span>{faq.q}</span>
+                        <span className="figma-faq-toggle">
+                          {isOpen ? <ChevronUp width="16" height="16" /> : <ChevronDown width="16" height="16" />}
+                        </span>
+                      </button>
+
+                      {isOpen && (
+                        <div className="figma-faq-answer-container">
+                          <div className="figma-faq-answer-box">
+                            <p>{faq.a}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* 7. Ready to publish your textbook? Callout Card (Figma Screenshot 3) */}
+          <section className="container figma-cta-section">
+            <div className="figma-cta-banner">
+              <h2>Ready to publish your textbook?</h2>
+              <p>Share your manuscript and we will suggest a clear plan and quote.</p>
+              <a
+                href="#contact"
+                className="btn-figma-cta-white"
+                onClick={scrollToContact}
+              >
+                <span>Talk to Our Team</span>
+                <span className="figma-cta-arrow-circle">
+                  <ArrowRight width="13" height="13" strokeWidth={2.6} />
+                </span>
+              </a>
+            </div>
+          </section>
+        </>
+      ) : (
+        /* ====================================================================
+           STANDARD LAYOUT FOR OTHER 6 SERVICES
+           ==================================================================== */
+        <>
+          <section className="service-hero">
+            <div className="container">
+              <nav className="breadcrumb" aria-label="Breadcrumb">
                 <a
-                  key={item.id}
-                  href={`#service/${item.id}`}
-                  className="other-service-card"
+                  href="#home"
                   onClick={(e) => {
                     e.preventDefault()
-                    if (onNavigate) onNavigate('service', item.id)
-                    else window.location.hash = `#service/${item.id}`
-                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                    if (onNavigate) onNavigate('home', '#home')
+                    else window.location.hash = '#home'
                   }}
                 >
-                  <span className="other-service-icon">
-                    <ItemIcon width="20" height="20" />
-                  </span>
-                  <div className="other-service-text">
-                    <h4>{item.title}</h4>
-                    <p>{item.text}</p>
-                  </div>
-                  <span className="other-service-arrow">
-                    <ArrowRight width="14" height="14" />
-                  </span>
+                  Home
                 </a>
-              )
-            })}
+                <span className="bc-sep">/</span>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (onNavigate) onNavigate('home', '#services')
+                    else window.location.hash = '#services'
+                  }}
+                >
+                  Services
+                </a>
+                <span className="bc-sep">/</span>
+                <span className="bc-current">{service.title}</span>
+              </nav>
+
+              <div className="service-hero-content">
+                <div className="service-hero-heading">
+                  <span className="service-hero-icon">
+                    <Icon width="34" height="34" />
+                  </span>
+                  <div>
+                    <h1>{service.title}</h1>
+                    <p className="service-hero-tagline">{service.text}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="container service-main-container">
+            <div className="service-content-grid">
+              <div className="service-primary-content">
+                <section className="service-card-section">
+                  <h2 className="section-subtitle">Service Overview</h2>
+                  <p className="service-overview-text">{service.overview}</p>
+
+                  {service.audience && (
+                    <div className="target-audience-box">
+                      <h3>Ideal For:</h3>
+                      <div className="audience-pills">
+                        {service.audience.map((aud) => (
+                          <span key={aud} className="audience-pill">
+                            {aud}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </section>
+
+                <section className="service-card-section">
+                  <h2 className="section-subtitle">What We Offer & Key Deliverables</h2>
+                  <div className="features-grid">
+                    {service.features.map((feat) => (
+                      <div key={feat.title} className="feature-item">
+                        <span className="feature-bullet">
+                          <Check width="14" height="14" />
+                        </span>
+                        <div>
+                          <h4>{feat.title}</h4>
+                          <p>{feat.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="service-card-section">
+                  <h2 className="section-subtitle">Our Proven Step-by-Step Workflow</h2>
+                  <div className="workflow-steps">
+                    {service.steps.map((st) => (
+                      <div key={st.step} className="workflow-step-card">
+                        <div className="step-num">{st.step}</div>
+                        <div className="step-content">
+                          <h4>{st.title}</h4>
+                          <p>{st.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="service-card-section">
+                  <h2 className="section-subtitle">Why Partner with Zedd 3+ Books?</h2>
+                  <ul className="benefits-checklist">
+                    {service.benefits.map((b) => (
+                      <li key={b}>
+                        <span className="benefit-icon">
+                          <Check width="13" height="13" />
+                        </span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+
+              <aside className="service-sidebar">
+                <div className="service-enquiry-card" id="enquiry-section">
+                  <h3>Enquire About {service.title}</h3>
+                  <p>Get in touch with our publication & academic consulting experts today.</p>
+
+                  {formSubmitted ? (
+                    <div className="enquiry-success">
+                      <span className="success-icon">✓</span>
+                      <h4>Thank You!</h4>
+                      <p>
+                        We received your inquiry regarding <strong>{service.title}</strong>. Our team will reach out within 24 hours.
+                      </p>
+                      <button
+                        type="button"
+                        className="btn btn-secondary btn-sm"
+                        onClick={() => setFormSubmitted(false)}
+                      >
+                        Submit Another Query
+                      </button>
+                    </div>
+                  ) : (
+                    <form className="service-form" onSubmit={handleSubmit}>
+                      <div className="form-group">
+                        <label htmlFor="name">Full Name *</label>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          required
+                          placeholder="Dr. / Prof. / Your Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="email">Email Address *</label>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="name@university.edu / mail.com"
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="phone">Phone / WhatsApp *</label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          required
+                          placeholder="+91 98765 43210"
+                          value={formData.phone}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="institution">University / Organization</label>
+                        <input
+                          id="institution"
+                          name="institution"
+                          type="text"
+                          placeholder="College / Institute name"
+                          value={formData.institution}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <div className="form-group">
+                        <label htmlFor="message">Your Requirements / Project Details</label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows="3"
+                          placeholder={`Tell us about your ${service.title} requirements...`}
+                          value={formData.message}
+                          onChange={handleChange}
+                        />
+                      </div>
+
+                      <button type="submit" className="btn btn-primary btn-block">
+                        Request Consultation <ArrowRight />
+                      </button>
+                    </form>
+                  )}
+
+                  <div className="sidebar-direct-contact">
+                    <p className="or-divider"><span>OR REACH DIRECTLY</span></p>
+                    <a href={CONTACT.phoneHref} className="sidebar-contact-pill">
+                      <Phone width="14" height="14" /> {CONTACT.phone}
+                    </a>
+                    <a
+                      href={`mailto:${CONTACT.email}?subject=Inquiry: ${encodeURIComponent(service.title)}`}
+                      className="sidebar-contact-pill"
+                    >
+                      <Mail width="14" height="14" /> {CONTACT.email}
+                    </a>
+                    <div className="sidebar-address">
+                      <Pin width="14" height="14" />
+                      <span>{CONTACT.address}</span>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
           </div>
-        </section>
-      </div>
+
+          {/* Other Services Navigation Grid (Only on other 6 services) */}
+          <section className="container other-services-section">
+            <div className="other-services-header">
+              <div>
+                <span className="accent-label">Explore More</span>
+                <h2>Other Academic & Publishing Services</h2>
+              </div>
+              <a
+                href="#services"
+                className="btn btn-secondary btn-sm"
+                onClick={(e) => {
+                  e.preventDefault()
+                  if (onNavigate) onNavigate('home', '#services')
+                  else window.location.hash = '#services'
+                }}
+              >
+                All Services Overview <ArrowRight />
+              </a>
+            </div>
+
+            <div className="other-services-grid">
+              {otherServices.map((item) => {
+                const ItemIcon = item.icon
+                return (
+                  <a
+                    key={item.id}
+                    href={`#service/${item.id}`}
+                    className="other-service-card"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('service', item.id)
+                      else window.location.hash = `#service/${item.id}`
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }}
+                  >
+                    <span className="other-service-icon">
+                      <ItemIcon width="20" height="20" />
+                    </span>
+                    <div className="other-service-text">
+                      <h4>{item.title}</h4>
+                      <p>{item.text}</p>
+                    </div>
+                    <span className="other-service-arrow">
+                      <ArrowRight width="14" height="14" />
+                    </span>
+                  </a>
+                )
+              })}
+            </div>
+          </section>
+        </>
+      )}
     </article>
   )
 }
