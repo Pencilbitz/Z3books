@@ -61,7 +61,6 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
           </nav>
 
           <div className="service-hero-content">
-            <span className="service-hero-badge">{service.badge}</span>
             <div className="service-hero-heading">
               <span className="service-hero-icon">
                 <Icon width="34" height="34" />

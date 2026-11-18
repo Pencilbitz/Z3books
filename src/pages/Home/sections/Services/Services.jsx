@@ -23,12 +23,11 @@ export default function Services({ onSelectService }) {
           </p>
 
           <div className="service-grid">
-            {SERVICES.map(({ id, icon: Icon, title, text, badge }) => (
+            {SERVICES.map(({ id, icon: Icon, title, text }) => (
               <article key={id} className="service-card">
                 <span className="service-icon">
                   <Icon width="20" height="20" />
                 </span>
-                <span className="service-card-badge">{badge}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
                 <a
