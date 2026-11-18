@@ -1,0 +1,76 @@
+/* Pill buttons used across the site */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  font-size: 14.5px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.btn svg {
+  transition: transform 0.2s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-primary {
+  background: var(--maroon);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border-color: var(--maroon);
+  color: var(--maroon);
+  background: #fff;
+}
+
+.btn-outline:hover {
+  background: var(--maroon);
+  color: #fff;
+}
+
+.btn-light {
+  background: #fff;
+  color: var(--maroon);
+  font-weight: 600;
+}
+
+.btn-light:hover {
+  background: var(--cream);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 13.5px;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 13.5px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}

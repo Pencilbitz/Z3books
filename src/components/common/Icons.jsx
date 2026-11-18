@@ -125,3 +125,77 @@ export const Close = (p) => (
     <path d="M6 6l12 12M18 6L6 18" />
   </svg>
 )
+
+export const XLogo = (p) => (
+  <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden {...p}>
+    <path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.17h1.7L7.4 4.73H5.58z" />
+  </svg>
+)
+
+export const Barcode = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M4 5v14M7 5v14M10.5 5v14M13 5v14M16.5 5v14M20 5v14" />
+  </svg>
+)
+
+export const Tablet = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <rect x="5" y="2.5" width="14" height="19" rx="2.5" />
+    <path d="M9 6.5h6M9 10h6M9 13.5h4M11 18.5h2" />
+  </svg>
+)
+
+export const Bulb = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z" />
+  </svg>
+)
+
+export const Library = (p) => (
+  <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
+    <path d="M4 4v16M8 4v16M12 6l4 14M17 5.5l3.5 13.5" />
+  </svg>
+)
+
+export const ArrowUp = (p) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" {...base} strokeWidth={2.2} {...p}>
+    <path d="M12 19V5M6 11l6-6 6 6" />
+  </svg>
+)
+
+/* ---- Solid icons for the About section arc ---- */
+const solid = { fill: 'currentColor', 'aria-hidden': true }
+
+export const BookSolid = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...solid} {...p}>
+    <path d="M2 5.5C4.8 4.6 8 4.8 11.2 6.4V20c-3.1-1.5-6.3-1.7-9.2-.8zM22 5.5c-2.8-.9-6-.7-9.2.9V20c3.1-1.5 6.3-1.7 9.2-.8z" />
+    <path d="M1 20.6c3.6-1 7.4-.6 11 1.2 3.6-1.8 7.4-2.2 11-1.2v1c-3.5-.9-7.2-.4-11 1.4-3.8-1.8-7.5-2.3-11-1.4z" />
+  </svg>
+)
+
+export const FeatherSolid = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...solid} {...p}>
+    <path d="M20.7 2.3c-6.4.2-11.6 3.6-13.9 9.2-.9 2.2-1.2 4.4-1.1 6.3l-3 3 1.1 1.1 3-3c1.9.1 4.1-.2 6.3-1.1 1.4-.6 2.6-1.4 3.6-2.4l-3.4-.6 4.6-1.6c.6-.9 1.1-1.9 1.4-3l-3.9.2 4.3-2.3c.4-1.7.5-3.6 1-5.8zM8.4 16.9l7.9-9.8-9.2 8.5z" />
+  </svg>
+)
+
+export const BulbSolid = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...solid} {...p}>
+    <path d="M12 6a5.5 5.5 0 0 0-3.4 9.8c.5.4.9 1 .9 1.7v.5h5v-.5c0-.7.4-1.3.9-1.7A5.5 5.5 0 0 0 12 6zM9.5 19h5v1.2a1.3 1.3 0 0 1-1.3 1.3h-2.4a1.3 1.3 0 0 1-1.3-1.3z" />
+    <path d="M11.3 1h1.4v3h-1.4zM3.6 4.6l1-1 2.1 2.1-1 1zM17.3 5.7l2.1-2.1 1 1-2.1 2.1zM.5 11.3h3v1.4h-3zM20.5 11.3h3v1.4h-3z" />
+  </svg>
+)
+
+export const PenNibSolid = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...solid} {...p}>
+    <path d="M14.5 2.5l7 7-2 2-1.1-.4-4.6 7.4L3 22l3.5-10.8 7.4-4.6-.4-1.1zM9.6 13a1.9 1.9 0 1 0 2.7-.1 1.9 1.9 0 0 0-2.7.1zm-4.3 6.9l3.8-3.8-.8-.8-3.8 3.8z" />
+  </svg>
+)
+
+export const BooksSolid = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...solid} {...p}>
+    <path d="M2 4h4.5v16H2zM7.5 6H11v14H7.5zM12 5.6l3.4-.9 4.2 15.4-3.4.9z" />
+    <path d="M2 7h4.5v1H2zM2 16h4.5v1H2zM7.5 9H11v1H7.5zM7.5 17H11v1H7.5z" fill="#f6dabf" />
+    <path d="M1 21h22v1.5H1z" />
+  </svg>
+)

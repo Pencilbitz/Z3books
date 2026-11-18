@@ -1,0 +1,53 @@
+/* Shared layout helpers and section headings */
+.container {
+  width: min(1120px, 100% - 40px);
+  margin-inline: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.accent {
+  color: var(--maroon);
+}
+
+/* Underlined section heading, as in the design */
+.u-title {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  padding-bottom: 6px;
+}
+
+.u-title::after {
+  content: '';
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.center-title {
+  display: table;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* Hidden visually but still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

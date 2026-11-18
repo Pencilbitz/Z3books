@@ -1,0 +1,86 @@
+.howwhy {
+  position: relative;
+  padding: 48px 0 72px;
+  background: var(--cream);
+}
+
+.howwhy-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 104px;
+  height: 120px;
+  background: var(--rust);
+}
+
+.howwhy-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+}
+
+.info-card {
+  min-height: 420px;
+  padding: 34px 40px;
+  background: var(--tan);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+}
+
+.info-card h3 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.5px;
+}
+
+.dot-list {
+  display: grid;
+  gap: 18px;
+}
+
+.dot-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.dot-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.5em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--maroon);
+}
+
+@media (max-width: 1000px) {
+  .howwhy-grid {
+    gap: 40px;
+  }
+  .info-card {
+    padding: 30px 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .howwhy-band {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .howwhy-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .info-card {
+    min-height: 0;
+  }
+}

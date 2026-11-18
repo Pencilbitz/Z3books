@@ -1,19 +1,20 @@
 :root {
-  --maroon: #8b1530;
-  --maroon-dark: #6a0e23;
-  --maroon-deep: #520a1b;
-  --cream: #fdf6ee;
-  --cream-2: #f8ece0;
-  --sand: #f1dfcb;
-  --gold: #e8b866;
-  --ink: #17121a;
-  --text: #3b3438;
-  --muted: #5e5559;
-  --card: #fffdfb;
-  --shadow-sm: 0 6px 18px rgba(110, 40, 30, 0.08);
-  --shadow-md: 0 14px 36px rgba(110, 40, 30, 0.12);
-  --radius: 14px;
-  --font: 'Outfit', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --maroon: #960018;
+  --maroon-dark: #7a0014;
+  --rust: #b24b3a;
+  --cream: #f3e9dd;
+  --cream-2: #f4ebe0;
+  --tan: #d7b89c;
+  --peach: #f6dabf;
+  --peach-2: #e3b893;
+  --ink: #1d1416;
+  --text: #3a2f31;
+  --muted: #6b5d5f;
+  --card: #ffffff;
+  --shadow-sm: 0 4px 12px rgba(90, 50, 30, 0.08);
+  --shadow-md: 0 12px 28px rgba(90, 50, 30, 0.18);
+  --radius: 10px;
+  --font: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
 
   color-scheme: light;
   font-family: var(--font);
