@@ -5,8 +5,7 @@
 .trademark-hero {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 68px);
-  padding: 20px 0 24px;
+  padding: 24px 0 44px;
   background: linear-gradient(115deg, #fff9ee 0%, #f9edda 62%, #fff8e2 100%);
   border-bottom: 1px solid rgba(120, 74, 31, 0.1);
 }
@@ -17,7 +16,7 @@
 }
 
 .trademark-hero .breadcrumb {
-  margin-bottom: 14px;
+  margin-bottom: 26px;
 }
 
 .trademark-hero-grid {
@@ -103,7 +102,7 @@
 }
 
 .trademark-hero-card {
-  width: min(100%, 520px);
+  width: min(100%, 410px);
   justify-self: center;
   overflow: hidden;
   border-radius: 18px;
@@ -119,12 +118,11 @@
 }
 
 .trademark-overview-band {
-  min-height: 360px;
   display: grid;
   grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
   align-items: center;
   gap: 20px;
-  padding: 36px max(24px, calc((100% - 1160px) / 2));
+  padding: 56px max(24px, calc((100% - 1160px) / 2)) 60px;
   background: #d7b89c;
 }
 
@@ -166,7 +164,7 @@
 .trademark-instruments-section,
 .trademark-offers-section,
 .trademark-process-section {
-  padding: 34px 0 42px;
+  padding: 56px 0 60px;
   background: #f5eadf;
 }
 
@@ -385,46 +383,69 @@
 }
 
 .trademark-process-container > h2 {
-  max-width: 480px;
+  max-width: 620px;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
   margin: 0 auto 10px;
 }
 
 .trademark-process-intro {
   color: #75665d;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   text-align: center;
-  margin: 0 auto 24px;
+  margin: 0 auto 22px;
 }
 
 .trademark-process-track {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  gap: 16px;
+  padding: 28px 18px 24px;
+  border: 1px solid rgba(90, 50, 30, 0.07);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(90, 50, 30, 0.06);
+}
+
+.trademark-process-track::before {
+  position: absolute;
+  top: 43px;
+  right: 10%;
+  left: 10%;
+  height: 2px;
+  background: linear-gradient(to right, #a00024 0 78%, #eadccf 78%);
+  content: '';
 }
 
 .trademark-process-step {
   position: relative;
+  z-index: 1;
   text-align: center;
   padding: 0 8px;
 }
 
 .trademark-process-icon {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-  margin: 0 auto 10px;
-  border: 1px solid #d8b69b;
+  margin: 0 auto 8px;
+  border: 0;
   border-radius: 50%;
-  background: #fff;
-  color: #a00024;
+  background: #a00024;
+  color: #fff;
+}
+
+.trademark-process-step.is-final .trademark-process-icon {
+  background: #d7b89c;
+  color: #70451f;
 }
 
 .trademark-process-step-number {
   display: block;
   color: #a00024;
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   font-weight: 800;
   margin-bottom: 5px;
 }
@@ -444,7 +465,7 @@
 }
 
 .trademark-audience-section {
-  padding: 28px 0;
+  padding: 54px 0 68px;
   background: #fffaf5;
 }
 
@@ -502,7 +523,7 @@
 }
 
 .trademark-values-section {
-  padding: 30px 0 34px;
+  padding: 56px 0 64px;
   background: #d7b89c;
 }
 
@@ -549,7 +570,7 @@
 }
 
 .trademark-cta-section {
-  padding: 28px 20px 58px;
+  padding: 54px 20px 64px;
   background: var(--cream);
 }
 
@@ -636,10 +657,6 @@
 }
 
 @media (max-width: 900px) {
-  .trademark-hero {
-    min-height: auto;
-  }
-
   .trademark-hero-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -657,11 +674,15 @@
   .trademark-process-track {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .trademark-process-track::before {
+    display: none;
+  }
 }
 
 @media (max-width: 680px) {
   .trademark-hero {
-    padding: 20px 0 24px;
+    padding: 24px 0 36px;
   }
 
   .trademark-hero-grid {
@@ -693,7 +714,7 @@
   .trademark-overview-band {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding: 20px 18px 26px;
+    padding: 32px 18px 38px;
   }
 
   .trademark-overview-illustration {
@@ -708,7 +729,7 @@
   .trademark-instruments-section,
   .trademark-offers-section,
   .trademark-process-section {
-    padding: 26px 0 32px;
+    padding: 36px 0 40px;
   }
 
   .trademark-instrument-grid,
@@ -750,7 +771,15 @@
   }
 
   .trademark-values-section {
-    padding: 24px 0 28px;
+    padding: 36px 0 40px;
+  }
+
+  .trademark-audience-section {
+    padding: 36px 0 40px;
+  }
+
+  .trademark-cta-section {
+    padding: 36px 20px 44px;
   }
 }
 

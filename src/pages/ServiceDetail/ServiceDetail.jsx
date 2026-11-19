@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import textbookBookMockup from '../../assets/images/textbook-anaimalai-book.png'
 import textbookHeroImg from '../../assets/images/textbook-hero-finance-city.png'
-import upskillingHeroBooks from '../../assets/images/upskilling-hero-books.png'
-import upskillingMeetingImg from '../../assets/images/upskilling-educators-meeting.png'
+import upskillingHeroBooks from '../../assets/images/upskilling-hero-books-hd.png'
+import upskillingMeetingImg from '../../assets/images/upskilling-educators-meeting-hd.png'
 import {
   ArrowRight,
   Check,
