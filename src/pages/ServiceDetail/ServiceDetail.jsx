@@ -23,6 +23,7 @@ import {
 import { CONTACT } from '../../data/contact.js'
 import { SERVICES } from '../../data/services.js'
 import TrademarkServiceContent from './TrademarkServiceContent.jsx'
+import ScopusServiceContent from './ScopusServiceContent.jsx'
 import './ServiceDetail.css'
 
 const OVERVIEW_PILLS = [
@@ -349,12 +350,21 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   const isTextbook = service.id === 'textbook-publications'
   const isUpskilling = service.id === 'professional-upskilling-services'
   const isTrademarkService = service.id === 'trademarks-copyright-services'
+  const isScopusService = service.id === 'scopus-indexed-book-chapters'
   const Icon = service.icon
 
   if (isTrademarkService) {
     return (
       <article className="service-detail-page trademark-service-detail-page">
         <TrademarkServiceContent service={service} onNavigate={onNavigate} />
+      </article>
+    )
+  }
+
+  if (isScopusService) {
+    return (
+      <article className="service-detail-page scopus-service-detail-page">
+        <ScopusServiceContent service={service} onNavigate={onNavigate} />
       </article>
     )
   }
