@@ -24,6 +24,7 @@ import { CONTACT } from '../../data/contact.js'
 import { SERVICES } from '../../data/services.js'
 import TrademarkServiceContent from './TrademarkServiceContent.jsx'
 import ScopusServiceContent from './ScopusServiceContent.jsx'
+import PatentServiceContent from './PatentServiceContent.jsx'
 import './ServiceDetail.css'
 
 const OVERVIEW_PILLS = [
@@ -351,6 +352,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   const isUpskilling = service.id === 'professional-upskilling-services'
   const isTrademarkService = service.id === 'trademarks-copyright-services'
   const isScopusService = service.id === 'scopus-indexed-book-chapters'
+  const isPatentService = service.id === 'patent-grant-support'
   const Icon = service.icon
 
   if (isTrademarkService) {
@@ -365,6 +367,14 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     return (
       <article className="service-detail-page scopus-service-detail-page">
         <ScopusServiceContent service={service} onNavigate={onNavigate} />
+      </article>
+    )
+  }
+
+  if (isPatentService) {
+    return (
+      <article className="service-detail-page patent-service-detail-page">
+        <PatentServiceContent service={service} onNavigate={onNavigate} />
       </article>
     )
   }

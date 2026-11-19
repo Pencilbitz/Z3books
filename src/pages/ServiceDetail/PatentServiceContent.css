@@ -1,0 +1,1025 @@
+/* ==========================================================================
+   PATENT GRANT SUPPORT PAGE STYLES
+   Adhering to warm academic palette and Figma layout
+   ========================================================================== */
+
+.patent-page-wrapper {
+  background-color: var(--cream);
+  min-height: 80vh;
+  padding: 24px 0 80px;
+}
+
+.patent-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Breadcrumb Navigation */
+.patent-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 32px;
+  color: #6e5e57;
+}
+
+.patent-breadcrumb a {
+  color: #6e5e57;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.patent-breadcrumb a:hover {
+  color: var(--maroon);
+}
+
+.patent-bc-sep {
+  color: #a89488;
+  font-size: 11px;
+}
+
+.patent-bc-current {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.patent-hero-section {
+  padding: 12px 0 40px;
+}
+
+.patent-hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.patent-hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.patent-category-tag {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #a06a44;
+  margin-bottom: 16px;
+}
+
+.patent-hero-title {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: #1d1416;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  letter-spacing: -0.5px;
+}
+
+.patent-accent-crimson {
+  color: var(--maroon);
+}
+
+.patent-hero-subtitle {
+  font-size: 15px;
+  line-height: 1.62;
+  color: #5e4f52;
+  margin: 0 0 32px;
+  max-width: 540px;
+}
+
+.patent-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn-patent-primary {
+  background: var(--maroon);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 18px rgba(139, 0, 21, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-patent-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(139, 0, 21, 0.32);
+  background: #7a0013;
+}
+
+.patent-arrow-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.btn-patent-outline {
+  background: transparent;
+  color: #1d1416;
+  border: 1.5px solid rgba(139, 0, 21, 0.4);
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-patent-outline:hover {
+  border-color: var(--maroon);
+  color: var(--maroon);
+  background: rgba(139, 0, 21, 0.04);
+  transform: translateY(-1px);
+}
+
+.patent-hero-divider {
+  height: 1px;
+  background: rgba(90, 50, 30, 0.12);
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.patent-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.patent-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #5e4f52;
+}
+
+.patent-trust-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f4dcd3;
+  color: var(--maroon);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.patent-trust-text {
+  letter-spacing: -0.1px;
+}
+
+/* ==========================================================================
+   RIGHT HERO VISUAL CARD
+   ========================================================================== */
+.patent-hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.patent-hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ecd9ca;
+  box-shadow: 0 16px 44px rgba(90, 50, 30, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patent-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 52px rgba(90, 50, 30, 0.14);
+}
+
+.patent-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 958 / 686;
+}
+
+.patent-docketing-pill {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  padding: 9px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.patent-docketing-text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--maroon);
+  text-transform: uppercase;
+}
+
+.patent-docketing-icon {
+  color: var(--maroon);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 2: THREE STAGES (WARM TAN PANEL)
+   ========================================================================== */
+.patent-stages-section {
+  background: #dec4b0; /* Exact warm tan from Figma */
+  padding: 60px 0 68px;
+  margin-top: 10px;
+}
+
+.patent-stages-header {
+  margin-bottom: 40px;
+}
+
+.patent-stages-title {
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 8px;
+  letter-spacing: -0.4px;
+}
+
+.patent-stages-sub {
+  font-size: 14.5px;
+  color: #5e4f52;
+  margin: 0;
+  max-width: 650px;
+  line-height: 1.55;
+}
+
+.patent-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.patent-stage-col {
+  display: flex;
+  flex-direction: column;
+  padding-right: 28px;
+}
+
+.patent-stage-col.has-divider {
+  border-right: 1px solid rgba(90, 50, 30, 0.15);
+}
+
+.patent-stage-top-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.patent-stage-num {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--maroon);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.patent-stage-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #8c5332;
+}
+
+.patent-stage-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.patent-stage-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4e3f42;
+  margin: 0 0 22px;
+  flex: 1;
+}
+
+.patent-stage-footer {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.patent-stage-footer svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 3: PHASE 01 - PATENT DRAFTING
+   ========================================================================== */
+.patent-drafting-section {
+  background: var(--cream);
+  padding: 76px 0 80px;
+}
+
+.patent-drafting-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.patent-drafting-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+.patent-drafting-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ebd8c8;
+  box-shadow: 0 16px 40px rgba(90, 50, 30, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patent-drafting-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(90, 50, 30, 0.12);
+}
+
+.patent-spec-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1d1416;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.patent-drafting-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1.04;
+}
+
+.patent-drafting-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.patent-phase-pill {
+  display: inline-block;
+  align-self: flex-start;
+  background: #ebd8c8;
+  color: #8c5332;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+.patent-drafting-title {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.patent-drafting-accent-sub {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--maroon);
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.patent-drafting-p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5e4f52;
+  margin: 0 0 24px;
+}
+
+.patent-drafting-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.patent-drafting-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2c1e21;
+}
+
+.patent-bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--maroon);
+  flex-shrink: 0;
+}
+
+.patent-best-for-pill {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  background: #f3e4d7;
+  border: 1px solid rgba(140, 83, 50, 0.15);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 12px;
+  color: #5e4f52;
+}
+
+.patent-best-for-pill svg {
+  color: #8c5332;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 4: PHASE 02 - PATENT FILING (WARM TAN PANEL)
+   ========================================================================== */
+.patent-filing-section {
+  background: #dec4b0; /* Exact warm tan from screenshot */
+  padding: 76px 0 80px;
+}
+
+.patent-filing-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.patent-filing-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.patent-filing-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+.patent-phase-pill-light {
+  background: rgba(255, 255, 255, 0.72);
+  color: #8c5332;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.patent-best-for-light {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(140, 83, 50, 0.22);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.patent-jurisdiction-pill {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1d1416;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   SECTION 5: PHASE 03 - PROSECUTION SUPPORT
+   ========================================================================== */
+.patent-prosecution-section {
+  background: var(--cream);
+  padding: 76px 0 80px;
+}
+
+.patent-fer-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--maroon);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   SECTION 6: WHO IT'S FOR (5-ITEM AUDIENCE ROW)
+   ========================================================================== */
+.patent-who-section {
+  background: var(--cream);
+  padding: 68px 0 60px;
+}
+
+.patent-who-header {
+  text-align: left;
+  margin-bottom: 44px;
+}
+
+.patent-who-title {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 8px;
+  letter-spacing: -0.4px;
+}
+
+.patent-who-sub {
+  font-size: 14.5px;
+  color: #5e4f52;
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.55;
+}
+
+.patent-who-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.patent-who-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.patent-who-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(139, 0, 21, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patent-who-item:hover .patent-who-badge {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(139, 0, 21, 0.32);
+}
+
+.patent-who-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1d1416;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 7: TRANSPARENT COLLABORATION PROTOCOL (WARM TAN PANEL)
+   ========================================================================== */
+.patent-protocol-section {
+  background: var(--cream);
+  padding: 24px 0 84px;
+}
+
+.patent-protocol-card-wrapper {
+  background: #dec4b0;
+  border-radius: 28px;
+  padding: 48px 44px 52px;
+  box-shadow: 0 16px 44px rgba(90, 50, 30, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.patent-protocol-title {
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: #1d1416;
+  text-align: center;
+  margin: 0 0 36px;
+  letter-spacing: -0.4px;
+}
+
+.patent-protocol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.patent-protocol-card {
+  background: #faf4ed;
+  border-radius: 22px;
+  padding: 32px 30px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 20px rgba(90, 50, 30, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.patent-protocol-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.patent-protocol-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.patent-protocol-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0;
+}
+
+.patent-protocol-card-sub {
+  font-size: 13px;
+  color: #5e4f52;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.patent-protocol-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.patent-protocol-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c1e21;
+  line-height: 1.45;
+}
+
+.patent-protocol-footer-note {
+  font-size: 11px;
+  font-style: italic;
+  color: #7a6a64;
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(90, 50, 30, 0.08);
+}
+
+/* ==========================================================================
+   SECTION 8: WHY CHOOSE ZEDD 3+ BOOKS FOR PATENT SUPPORT
+   ========================================================================== */
+.patent-why-section {
+  background: var(--cream);
+  padding: 68px 0 76px;
+}
+
+.patent-why-grid {
+  display: grid;
+  grid-template-columns: 0.94fr 1.06fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.patent-why-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+.patent-why-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ecd9ca;
+  box-shadow: 0 16px 44px rgba(90, 50, 30, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patent-why-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(90, 50, 30, 0.12);
+}
+
+.patent-why-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 0.97;
+}
+
+.patent-why-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.patent-why-title {
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 32px;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+}
+
+.patent-why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.patent-why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.patent-why-num-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.patent-why-item-content {
+  flex: 1;
+}
+
+.patent-why-item-title {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 5px;
+  line-height: 1.3;
+}
+
+.patent-why-item-desc {
+  font-size: 13px;
+  line-height: 1.58;
+  color: #5e4f52;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 9: READY TO PATENT YOUR WORK (BOTTOM CTA BANNER)
+   ========================================================================== */
+.patent-cta-section {
+  background: var(--cream);
+  padding: 16px 0 84px;
+}
+
+.patent-cta-banner {
+  background: var(--maroon);
+  border-radius: 28px;
+  padding: 56px 32px 52px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 16px 40px rgba(139, 0, 21, 0.22);
+}
+
+.patent-cta-title {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.patent-cta-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 28px;
+}
+
+.btn-patent-cta-white {
+  background: #ffffff;
+  color: var(--maroon);
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-patent-cta-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.patent-cta-arrow-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .patent-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .patent-hero-right {
+    justify-content: flex-start;
+  }
+
+  .patent-hero-card {
+    max-width: 100%;
+  }
+
+  .patent-stages-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .patent-stage-col {
+    padding-right: 0;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(90, 50, 30, 0.12);
+    padding-bottom: 24px;
+  }
+
+  .patent-stage-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .patent-drafting-grid,
+  .patent-filing-grid,
+  .patent-why-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .patent-drafting-visual-col,
+  .patent-filing-visual-col,
+  .patent-why-visual-col {
+    justify-content: flex-start;
+  }
+
+  .patent-drafting-card,
+  .patent-why-card {
+    max-width: 100%;
+  }
+
+  .patent-filing-info-col {
+    order: 2;
+  }
+
+  .patent-filing-visual-col {
+    order: 1;
+  }
+
+  .patent-who-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .patent-protocol-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patent-protocol-card-wrapper {
+    padding: 36px 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .patent-who-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .patent-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-patent-primary,
+  .btn-patent-outline {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .patent-trust-badges {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .patent-docketing-pill {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 8px 14px;
+  }
+
+  .patent-docketing-text {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+  }
+
+  .patent-best-for-pill {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .patent-who-grid {
+    grid-template-columns: 1fr;
+  }
+}
