@@ -20,6 +20,27 @@ export const Check = (p) => (
   </svg>
 )
 
+export const GraduationCap = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12.5v4.5c3 3 9 3 12 0v-4.5" />
+  </svg>
+)
+
+export const Medal = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <circle cx="12" cy="8" r="6" />
+    <path d="M15.48 12.9L17 22l-5-3-5 3 1.52-9.1" />
+  </svg>
+)
+
+export const NetworkNodes = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <circle cx="12" cy="12" r="2.8" />
+    <path d="M12 9V3M12 21v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M3 12h6M15 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24" />
+  </svg>
+)
+
 export const Manuscript = (p) => (
   <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
     <path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z" />

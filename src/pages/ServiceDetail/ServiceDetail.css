@@ -200,6 +200,905 @@
 }
 
 /* ==========================================================================
+   1B. FIGMA HERO SECTION FOR PROFESSIONAL UPSKILLING SERVICES
+   ========================================================================== */
+.figma-upskilling-hero {
+  background: var(--cream-2);
+  padding: 24px 0 52px;
+  border-bottom: 1px solid rgba(90, 50, 30, 0.09);
+}
+
+.figma-upskilling-category {
+  display: inline-block;
+  color: #9c6644;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-bottom: 16px;
+}
+
+.figma-upskilling-title {
+  font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+  font-weight: 800;
+  color: #1d1416;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.figma-upskilling-subtitle {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #5e4f52;
+  max-width: 540px;
+  margin-bottom: 28px;
+}
+
+.figma-trust-features {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.figma-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1416;
+}
+
+.figma-trust-item-icon {
+  color: var(--maroon);
+  display: grid;
+  place-items: center;
+}
+
+.figma-upskilling-visual-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 44px rgba(90, 50, 30, 0.09);
+  padding: 16px;
+  max-width: 440px;
+  margin-inline: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figma-upskilling-visual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(90, 50, 30, 0.14);
+}
+
+.figma-upskilling-image-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f7ede2;
+}
+
+.figma-upskilling-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.figma-upskilling-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 8px 4px;
+  gap: 12px;
+}
+
+.figma-upskilling-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.figma-upskilling-meta-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1d1416;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.figma-upskilling-meta-sub {
+  font-size: 12.5px;
+  color: #7d6e67;
+  font-weight: 500;
+}
+
+.figma-limited-seats-pill {
+  background: #faebe1;
+  color: #9c6644;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   1C. WHO IT'S FOR SECTION (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-upskilling-who-section {
+  background: #d6b89c; /* Exact warm tan from screenshot */
+  padding: 56px 0 64px;
+  border-bottom: 1px solid rgba(90, 50, 30, 0.1);
+}
+
+.figma-who-main-title {
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin-bottom: 22px;
+  letter-spacing: -0.4px;
+}
+
+.figma-who-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.figma-who-tab-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  color: #3d2b24;
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.figma-who-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.figma-who-tab-btn.is-active {
+  background: var(--maroon);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(139, 0, 21, 0.25);
+}
+
+.figma-who-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.figma-who-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 40px rgba(90, 50, 30, 0.09);
+  padding: 16px;
+  max-width: 440px;
+}
+
+.figma-who-card-img-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.figma-who-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.figma-who-card-body {
+  padding: 4px 6px 6px;
+}
+
+.figma-who-card-tag {
+  display: inline-block;
+  background: #faebe1;
+  color: #9c6644;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 8px;
+}
+
+.figma-who-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1d1416;
+  line-height: 1.3;
+  margin: 0 0 6px;
+}
+
+.figma-who-card-desc {
+  font-size: 13px;
+  color: #6e5e57;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.figma-who-right-title {
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  color: #1d1416;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.figma-who-right-p {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #3d2b24;
+  margin-bottom: 24px;
+  max-width: 620px;
+}
+
+.figma-who-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.figma-who-bullets li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1d1416;
+  line-height: 1.4;
+}
+
+.figma-bullet-dot {
+  color: var(--maroon);
+  font-size: 22px;
+  line-height: 0.8;
+  flex-shrink: 0;
+}
+
+.figma-who-bestfor-pill {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(90, 50, 30, 0.04);
+}
+
+.figma-bestfor-icon {
+  color: var(--maroon);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.figma-bestfor-text {
+  font-size: 13.5px;
+  color: #2c1e21;
+}
+
+.figma-bestfor-text strong {
+  font-weight: 700;
+  color: #1d1416;
+}
+
+@media (max-width: 960px) {
+  .figma-who-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .figma-who-card {
+    max-width: 420px;
+  }
+}
+
+/* ==========================================================================
+   1D. OUR PROGRAMS SECTION (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-upskilling-programs-section {
+  background: var(--cream);
+  padding: 72px 0 68px;
+}
+
+.figma-programs-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 44px;
+}
+
+.figma-programs-title {
+  font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin-bottom: 12px;
+  letter-spacing: -0.4px;
+}
+
+.figma-programs-subtitle {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #6e5e57;
+  margin: 0;
+}
+
+.figma-programs-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.figma-program-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.figma-prog-num-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(139, 0, 21, 0.22);
+}
+
+.figma-program-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 18px 26px;
+  border: 1px solid rgba(90, 50, 30, 0.08);
+  box-shadow: 0 4px 16px rgba(90, 50, 30, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.figma-program-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(90, 50, 30, 0.09);
+}
+
+.figma-prog-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.figma-prog-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.figma-prog-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.figma-prog-tag {
+  background: #faebe1;
+  color: #9c6644;
+  border-radius: 999px;
+  padding: 3.5px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.figma-prog-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #6e5e57;
+  margin: 6px 0 0;
+}
+
+/* ==========================================================================
+   1E. HOW THE LEARNING WORKS SECTION (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-learning-works-section {
+  padding: 20px 0 60px;
+}
+
+.figma-learning-works-panel {
+  background: #d6b89c; /* Exact warm tan from screenshot */
+  border-radius: 28px;
+  padding: 48px 44px 44px;
+  box-shadow: 0 14px 36px rgba(90, 50, 30, 0.08);
+}
+
+.figma-learning-works-title {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin-bottom: 32px;
+  letter-spacing: -0.4px;
+}
+
+.figma-learning-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.figma-learning-card {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  padding: 28px 28px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(90, 50, 30, 0.04);
+}
+
+.figma-learning-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.figma-learning-icon-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(139, 0, 21, 0.22);
+}
+
+.figma-learning-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0;
+}
+
+.figma-learning-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.figma-learning-bullets li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #2c1e21;
+  font-weight: 500;
+}
+
+.figma-learning-bullet-dot {
+  color: var(--maroon);
+  font-size: 20px;
+  line-height: 0.8;
+  flex-shrink: 0;
+}
+
+.figma-learning-card-footer {
+  border-top: 1px solid rgba(90, 50, 30, 0.12);
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #5e4f52;
+}
+
+@media (max-width: 900px) {
+  .figma-learning-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .figma-learning-works-panel {
+    padding: 32px 20px 24px;
+  }
+  .figma-program-row {
+    gap: 12px;
+  }
+  .figma-program-card {
+    padding: 16px 18px;
+  }
+}
+
+/* ==========================================================================
+   1F. WHAT YOU'LL GAIN SECTION (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-gain-section {
+  background: var(--cream);
+  padding: 64px 0 60px;
+}
+
+.figma-gain-title {
+  text-align: center;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin-bottom: 48px;
+  letter-spacing: -0.4px;
+}
+
+.figma-gain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.figma-gain-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 20px;
+}
+
+.figma-gain-col.has-divider {
+  border-right: 1px solid rgba(90, 50, 30, 0.12);
+}
+
+.figma-gain-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(139, 0, 21, 0.22);
+}
+
+.figma-gain-col-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.figma-gain-col-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5e4f52;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .figma-gain-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .figma-gain-col.has-divider {
+    border-right: none;
+    border-bottom: 1px solid rgba(90, 50, 30, 0.12);
+    padding-right: 0;
+    padding-bottom: 28px;
+  }
+}
+
+/* ==========================================================================
+   1G. VOICES OF LEARNERS SECTION (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-voices-section {
+  padding: 30px 0 64px;
+}
+
+.figma-voices-panel {
+  background: #d6b89c; /* Exact warm tan from screenshot */
+  border-radius: 28px;
+  padding: 48px 40px 48px;
+  box-shadow: 0 14px 36px rgba(90, 50, 30, 0.08);
+}
+
+.figma-voices-title {
+  text-align: center;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: #1d1416;
+  margin-bottom: 28px;
+  letter-spacing: -0.4px;
+}
+
+.figma-voice-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 38px 44px 28px;
+  max-width: 720px;
+  margin: 0 auto 22px;
+  box-shadow: 0 12px 32px rgba(90, 50, 30, 0.07);
+  position: relative;
+}
+
+.figma-voice-quote-icon {
+  position: absolute;
+  top: 14px;
+  right: 28px;
+  font-size: 68px;
+  line-height: 1;
+  color: #f7ded2;
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+.figma-voice-quote {
+  font-size: 17.5px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #1d1416;
+  margin: 0 0 24px;
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+}
+
+.figma-voice-author-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid rgba(90, 50, 30, 0.1);
+  padding-top: 18px;
+}
+
+.figma-voice-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.figma-voice-author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.figma-voice-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1d1416;
+  margin: 0;
+}
+
+.figma-voice-dept {
+  font-size: 12px;
+  color: var(--maroon);
+  font-weight: 600;
+}
+
+.figma-voice-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.figma-voice-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(90, 50, 30, 0.28);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.figma-voice-dot.is-active {
+  width: 22px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--maroon);
+}
+
+/* ==========================================================================
+   1H. FREQUENTLY ASKED QUESTIONS (FIGMA SPEC FOR PROFESSIONAL UPSKILLING)
+   ========================================================================== */
+.figma-upskilling-faq-section {
+  padding: 44px 0 68px;
+}
+
+.figma-faq-two-col-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.figma-faq-heading {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  color: #1d1416;
+  line-height: 1.22;
+  margin-bottom: 14px;
+  letter-spacing: -0.4px;
+}
+
+.figma-faq-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #6e5e57;
+  margin-bottom: 24px;
+  max-width: 360px;
+}
+
+.figma-faq-callout-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid rgba(90, 50, 30, 0.08);
+  box-shadow: 0 6px 18px rgba(90, 50, 30, 0.04);
+  max-width: 360px;
+}
+
+.figma-faq-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--maroon);
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.figma-faq-callout-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #6e5e57;
+  margin: 0 0 12px;
+}
+
+.figma-faq-callout-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--maroon);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.figma-faq-callout-link:hover {
+  transform: translateX(2px);
+}
+
+.figma-faq-right-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.figma-faq-row {
+  border-bottom: 1px solid rgba(90, 50, 30, 0.12);
+  padding: 16px 0;
+  transition: all 0.2s ease;
+}
+
+.figma-faq-row:first-child {
+  padding-top: 0;
+}
+
+.figma-faq-row-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.figma-faq-q-text {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #1d1416;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.figma-faq-row-btn:hover .figma-faq-q-text {
+  color: var(--maroon);
+}
+
+.figma-faq-toggle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--maroon);
+  border: 1px solid rgba(139, 0, 21, 0.4);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.figma-faq-toggle-icon.is-open {
+  background: var(--maroon);
+  color: #ffffff;
+  border-color: var(--maroon);
+}
+
+.figma-faq-row-answer {
+  padding-top: 10px;
+}
+
+.figma-faq-row-answer p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #5e4f52;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .figma-faq-two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .figma-faq-callout-card {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
    2. FIGMA OVERVIEW SECTION (Warm Tan Mocha Banner)
    ========================================================================== */
 .figma-overview-section {

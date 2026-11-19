@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import textbookBookMockup from '../../assets/images/textbook-anaimalai-book.png'
 import textbookHeroImg from '../../assets/images/textbook-hero-finance-city.png'
+import upskillingHeroBooks from '../../assets/images/upskilling-hero-books.png'
+import upskillingMeetingImg from '../../assets/images/upskilling-educators-meeting.png'
 import {
   ArrowRight,
   Check,
   CheckCircle,
   ChevronDown,
   ChevronUp,
+  EventManagement,
+  GraduationCap,
   Mail,
+  Medal,
+  NetworkNodes,
   OpenBook,
   Phone,
   Pin,
@@ -135,11 +141,182 @@ const TEXTBOOK_FAQS = [
   },
 ]
 
+const UPSKILLING_AUDIENCES = {
+  educators: {
+    card: {
+      tag: 'Institutional Excellence',
+      title: 'Empowering Modern Teaching Practices',
+      desc: 'Bridging textbook publishing rigor with 21st-century active learning environments.',
+    },
+    right: {
+      title: 'Empowering Faculty & Academic Leaders',
+      desc: 'Specialized classroom pedagogy, curriculum publishing, AI literacy in teaching, and institutional impact tailored to modern educational reality. We help faculty transition from passive teaching to active scholarly creation and digital instructional leadership.',
+      bullets: [
+        'Curriculum Modernization & Digital Pedagogy',
+        'Publishing Academic Research & Textbooks',
+        'Student Engagement in Hybrid Environments',
+        'Institutional Leadership & Accreditation Readiness',
+      ],
+      bestFor: 'K-12 Educators, College Professors, Academic Coordinators & Educational Institutions',
+    },
+  },
+  professionals: {
+    card: {
+      tag: 'Corporate & Industry Leadership',
+      title: 'Executive Upskilling & Strategic Mastery',
+      desc: 'Translating deep domain expertise into industry-recognized patents, publications, and thought leadership.',
+    },
+    right: {
+      title: 'Accelerating Industry & Technical Careers',
+      desc: 'Advanced professional mastery in emerging technologies, intellectual property generation, AI integration, and technical writing for practicing engineers, managers, and R&D leaders.',
+      bullets: [
+        'Emerging Tech & Applied Generative AI Mastery',
+        'Converting Industry Solutions into Granted Patents',
+        'High-Impact Whitepapers & Technical Documentation',
+        'Executive Communication & Cross-Functional Innovation',
+      ],
+      bestFor: 'Corporate Engineers, R&D Managers, Technical Leads & Industry Practitioners',
+    },
+  },
+}
+
+const UPSKILLING_PROGRAMS = [
+  {
+    num: '01',
+    title: 'Academic Authoring & Research Publishing',
+    tags: ['Educators', 'Researchers'],
+    desc: 'Master scholarly writing, peer review navigation, citation standards, and commercial academic distribution.',
+  },
+  {
+    num: '02',
+    title: 'AI-Augmented Pedagogy & Classroom Technology',
+    tags: ['Educators', 'Curriculum Heads'],
+    desc: 'Integrate generative AI, digital assessment tools, and interactive modules into everyday curriculum.',
+  },
+  {
+    num: '03',
+    title: 'Executive Writing & Professional Thought Leadership',
+    tags: ['Professionals', 'Leaders'],
+    desc: 'Transform your industry expertise into published whitepapers, trade monographs, and speaking authority.',
+  },
+  {
+    num: '04',
+    title: 'Publishing Workflow & Self-Publishing Mastery',
+    tags: ['Educators', 'Independent Authors'],
+    desc: 'Comprehensive end-to-end training on ISBN, copyrighting, cover aesthetics, print production, and metadata.',
+  },
+  {
+    num: '05',
+    title: 'Digital Learning Content & Instructional Design',
+    tags: ['Instructional Designers', 'Teachers'],
+    desc: 'Create high-retention instructional materials, microlearning modules, and multimedia educational workbooks.',
+  },
+  {
+    num: '06',
+    title: 'Leadership Communication & Institutional Branding',
+    tags: ['Academic Leaders', 'Senior Executives'],
+    desc: 'Strategic narrative crafting, media presence, and stakeholder communication for senior administrators.',
+  },
+]
+
+const LEARNING_WORKS = {
+  teach: {
+    title: 'How we teach',
+    bullets: [
+      'Live interactive cohort workshops led by practicing professionals',
+      'Hands-on capstone projects tailored to your manuscript or institution',
+      'Direct 1-on-1 editorial review and feedback sessions',
+      'Post-program implementation toolkit and community access',
+    ],
+    footerLeft: 'Practical Mentorship',
+    footerRight: 'Zero Passive Lecturing',
+  },
+  formats: {
+    title: 'Formats',
+    bullets: [
+      'Weekend masterclasses (2-day intensive bootcamps)',
+      '6-week cohort-based evening certification tracks',
+      'Custom on-campus faculty development programs for institutions',
+      'Self-paced hybrid modules with weekly live mentor clinics',
+    ],
+    footerLeft: 'Hybrid & In-Person',
+    footerRight: 'Flexible Pacing',
+  },
+}
+
+const WHAT_YOU_GAIN = [
+  {
+    icon: OpenBook,
+    title: 'Tangible Publications & Output',
+    desc: 'Leave with a completed, peer-reviewed syllabus, published monograph outline, or launch-ready manuscript supported by our editorial team.',
+  },
+  {
+    icon: Medal,
+    title: 'Recognized Certification',
+    desc: 'Industry-accredited credentials endorsed by Zedd 3+ Books Press with verifiable digital badges for LinkedIn and institutional records.',
+  },
+  {
+    icon: NetworkNodes,
+    title: 'Lifetime Peer & Mentor Network',
+    desc: 'Direct ongoing connection to publishing editors, senior educators, academic keynote speakers, and collaborative alumni circles across South Asia.',
+  },
+]
+
+const VOICES_OF_LEARNERS = [
+  {
+    quote:
+      '“The practical authoring framework helped our department publish two peer-reviewed monographs within six months. Truly transformative.”',
+    initials: 'MR',
+    name: 'Dr. Meenakshi Raghavan',
+    dept: 'Department of Humanities, Coimbatore Institute',
+  },
+  {
+    quote:
+      '“The AI pedagogy and curriculum modernization masterclass completely reshaped how our faculty designs student assessments and blended coursework.”',
+    initials: 'SK',
+    name: 'Prof. Suresh Kumar',
+    dept: 'School of Computing, SRM Institute',
+  },
+  {
+    quote:
+      '“Transforming our specialized lecture notes into an indexed academic coursebook was seamless with Zedd 3+ Books. Highly recommended.”',
+    initials: 'AN',
+    name: 'Dr. Ananya Natarajan',
+    dept: 'Department of Electrical Engineering, Anna University',
+  },
+]
+
+const UPSKILLING_FAQS = [
+  {
+    q: 'Who are these upskilling programs primarily designed for?',
+    a: 'Our tracks are specifically curated for school educators, college & university faculty, academic coordinators, independent researchers, and corporate learning leaders looking to build publication-ready capstones, master AI-driven classroom pedagogy, or publish peer-reviewed academic works.',
+  },
+  {
+    q: 'Can our university or institution book a private cohort for faculty development?',
+    a: 'Yes. We deliver fully tailored on-campus and hybrid faculty development programs (FDPs) customized to your institution’s NIRF, NAAC, or NBA accreditation and API criteria.',
+  },
+  {
+    q: 'What is the time commitment required for the 6-week cohort track?',
+    a: 'Participants typically commit 3 to 4 hours per week, consisting of one 90-minute live interactive weekend masterclass and weekly hands-on assignment work with mentor feedback.',
+  },
+  {
+    q: 'Do you provide financial assistance or group registration discounts?',
+    a: 'Yes. Institutional group registrations of 5 or more faculty members receive tiered academic fee concessions, and research scholar discounts are available upon request.',
+  },
+  {
+    q: 'Will I receive direct support to publish my academic research or book?',
+    a: 'Every participant receives direct 1-on-1 editorial consultations with Zedd 3+ Books acquisitions editors to review and fast-track manuscripts for textbook or chapter release.',
+  },
+]
+
 export default function ServiceDetail({ serviceId, onNavigate }) {
   const service = SERVICES.find((s) => s.id === serviceId) || SERVICES[0]
   const otherServices = SERVICES.filter((s) => s.id !== service.id)
 
   const [openFaq, setOpenFaq] = useState(0) // First FAQ open by default as in screenshot
+  const [upskillingTab, setUpskillingTab] = useState('educators')
+  const [activeLearnerIdx, setActiveLearnerIdx] = useState(0)
+  const [openUpskillingFaq, setOpenUpskillingFaq] = useState(0)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -169,10 +346,11 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   }
 
   const isTextbook = service.id === 'textbook-publications'
+  const isUpskilling = service.id === 'professional-upskilling-services'
   const Icon = service.icon
 
   return (
-    <article className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''}`}>
+    <article className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''} ${isUpskilling ? 'is-upskilling-page' : ''}`}>
       {isTextbook ? (
         /* ====================================================================
            TEXTBOOK PUBLICATIONS: 100% COMPLETE FIGMA SPECIFICATION (IN ORDER)
@@ -440,9 +618,438 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
             </div>
           </section>
         </>
+      ) : isUpskilling ? (
+        /* ====================================================================
+           PROFESSIONAL UPSKILLING SERVICES: 100% COMPLETE FIGMA SPECIFICATION
+           ==================================================================== */
+        <>
+          {/* ================================================================
+             PROFESSIONAL UPSKILLING SERVICES: FIGMA HERO SPECIFICATION
+             ================================================================ */}
+              <section className="figma-textbook-hero figma-upskilling-hero">
+              <div className="container figma-hero-inner">
+                <nav className="figma-breadcrumb" aria-label="Breadcrumb">
+                  <a
+                    href="#home"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#home')
+                      else window.location.hash = '#home'
+                    }}
+                  >
+                    Home
+                  </a>
+                  <span className="figma-bc-sep">&gt;</span>
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#services')
+                      else window.location.hash = '#services'
+                    }}
+                  >
+                    Services
+                  </a>
+                  <span className="figma-bc-sep">&gt;</span>
+                  <span className="figma-bc-current">Professional Upskilling Services</span>
+                </nav>
+
+                <div className="figma-hero-grid figma-upskilling-grid">
+                  <div className="figma-hero-left">
+                    <span className="figma-upskilling-category">Professional Upskilling Services</span>
+
+                    <h1 className="figma-hero-title figma-upskilling-title">
+                      Transform Your <span className="figma-accent-crimson">Skills.</span> Unlock<br />
+                      New Opportunities
+                    </h1>
+
+                    <p className="figma-hero-subtitle figma-upskilling-subtitle">
+                      Practical learning programs designed for educators and professionals who want to continuously learn, develop, grow with confidence and prepare for future opportunities.
+                    </p>
+
+                    <div className="figma-hero-actions">
+                      <a
+                        href="#enquiry-section"
+                        className="btn-figma-primary"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          document.getElementById('enquiry-section')?.scrollIntoView({ behavior: 'smooth' })
+                        }}
+                      >
+                        <span>Explore Now</span>
+                        <span className="figma-arrow-circle">
+                          <ArrowRight width="13" height="13" strokeWidth={2.4} />
+                        </span>
+                      </a>
+
+                      <a
+                        href="#upskilling-programs"
+                        className="btn-figma-outline"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          document.getElementById('upskilling-programs')?.scrollIntoView({ behavior: 'smooth' })
+                        }}
+                      >
+                        View Programs
+                      </a>
+                    </div>
+
+                    <div className="figma-trust-features">
+                      <div className="figma-trust-item">
+                        <span className="figma-trust-item-icon">
+                          <CheckCircle width="18" height="18" />
+                        </span>
+                        <span className="figma-trust-item-text">UGC-Aligned Frameworks</span>
+                      </div>
+                      <div className="figma-trust-item">
+                        <span className="figma-trust-item-icon">
+                          <OpenBook width="18" height="18" />
+                        </span>
+                        <span className="figma-trust-item-text">Publication-Ready Capstones</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="figma-hero-right">
+                    <div className="figma-upskilling-visual-card">
+                      <div className="figma-upskilling-image-wrap">
+                        <img
+                          src={upskillingHeroBooks}
+                          alt="Professional Upskilling Services - Books and resources on desk"
+                          className="figma-upskilling-card-image"
+                        />
+                      </div>
+                      <div className="figma-upskilling-card-bottom">
+                        <div className="figma-upskilling-meta">
+                          <h4 className="figma-upskilling-meta-title">Next Cohort Starts Soon</h4>
+                          <span className="figma-upskilling-meta-sub">Faculty &amp; Professional Fast-Tracks</span>
+                        </div>
+                        <span className="figma-limited-seats-pill">Limited Seats</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               PROFESSIONAL UPSKILLING: WHO IT'S FOR SECTION (FIGMA SPEC)
+               ================================================================ */}
+            <section className="figma-upskilling-who-section">
+              <div className="container">
+                <h2 className="figma-who-main-title">Who it&apos;s for</h2>
+
+                <div className="figma-who-tabs" role="tablist" aria-label="Who it is for tabs">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={upskillingTab === 'educators'}
+                    className={`figma-who-tab-btn ${upskillingTab === 'educators' ? 'is-active' : ''}`}
+                    onClick={() => setUpskillingTab('educators')}
+                  >
+                    For Educators
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={upskillingTab === 'professionals'}
+                    className={`figma-who-tab-btn ${upskillingTab === 'professionals' ? 'is-active' : ''}`}
+                    onClick={() => setUpskillingTab('professionals')}
+                  >
+                    For Professionals
+                  </button>
+                </div>
+
+                <div className="figma-who-grid">
+                  {/* Left Column: White Card with Photo */}
+                  <div className="figma-who-card">
+                    <div className="figma-who-card-img-wrap">
+                      <img
+                        src={upskillingMeetingImg}
+                        alt={UPSKILLING_AUDIENCES[upskillingTab].card.title}
+                        className="figma-who-card-img"
+                      />
+                    </div>
+                    <div className="figma-who-card-body">
+                      <span className="figma-who-card-tag">
+                        {UPSKILLING_AUDIENCES[upskillingTab].card.tag}
+                      </span>
+                      <h3 className="figma-who-card-title">
+                        {UPSKILLING_AUDIENCES[upskillingTab].card.title}
+                      </h3>
+                      <p className="figma-who-card-desc">
+                        {UPSKILLING_AUDIENCES[upskillingTab].card.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Column: Heading, Paragraph, Bullets, Best for Bar */}
+                  <div className="figma-who-right-content">
+                    <h3 className="figma-who-right-title">
+                      {UPSKILLING_AUDIENCES[upskillingTab].right.title}
+                    </h3>
+
+                    <p className="figma-who-right-p">
+                      {UPSKILLING_AUDIENCES[upskillingTab].right.desc}
+                    </p>
+
+                    <ul className="figma-who-bullets">
+                      {UPSKILLING_AUDIENCES[upskillingTab].right.bullets.map((item) => (
+                        <li key={item}>
+                          <span className="figma-bullet-dot">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="figma-who-bestfor-pill">
+                      <span className="figma-bestfor-icon">
+                        <GraduationCap width="18" height="18" />
+                      </span>
+                      <span className="figma-bestfor-text">
+                        <strong>Best for:</strong> {UPSKILLING_AUDIENCES[upskillingTab].right.bestFor}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               PROFESSIONAL UPSKILLING: OUR PROGRAMS SECTION (FIGMA SPEC)
+               ================================================================ */}
+            <section className="figma-upskilling-programs-section" id="upskilling-programs">
+              <div className="container">
+                <div className="figma-programs-header">
+                  <h2 className="figma-programs-title">Our programs</h2>
+                  <p className="figma-programs-subtitle">
+                    Curated learning tracks designed for immediate, practical application in academic and professional careers.
+                  </p>
+                </div>
+
+                <div className="figma-programs-list">
+                  {UPSKILLING_PROGRAMS.map((prog) => (
+                    <div key={prog.num} className="figma-program-row">
+                      <span className="figma-prog-num-badge">{prog.num}</span>
+                      <div className="figma-program-card">
+                        <div className="figma-prog-card-top">
+                          <h3 className="figma-prog-title">{prog.title}</h3>
+                          <div className="figma-prog-tags">
+                            {prog.tags.map((t) => (
+                              <span key={t} className="figma-prog-tag">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <p className="figma-prog-desc">{prog.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               PROFESSIONAL UPSKILLING: HOW THE LEARNING WORKS SECTION (FIGMA SPEC)
+               ================================================================ */}
+            <section className="container figma-learning-works-section">
+              <div className="figma-learning-works-panel">
+                <h2 className="figma-learning-works-title">How the learning works</h2>
+
+                <div className="figma-learning-grid">
+                  {/* Card 1: How we teach */}
+                  <div className="figma-learning-card">
+                    <div className="figma-learning-card-header">
+                      <span className="figma-learning-icon-badge">
+                        <Pin width="17" height="17" />
+                      </span>
+                      <h3 className="figma-learning-card-title">{LEARNING_WORKS.teach.title}</h3>
+                    </div>
+                    <ul className="figma-learning-bullets">
+                      {LEARNING_WORKS.teach.bullets.map((b) => (
+                        <li key={b}>
+                          <span className="figma-learning-bullet-dot">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="figma-learning-card-footer">
+                      <span>{LEARNING_WORKS.teach.footerLeft}</span>
+                      <span>{LEARNING_WORKS.teach.footerRight}</span>
+                    </div>
+                  </div>
+
+                  {/* Card 2: Formats */}
+                  <div className="figma-learning-card">
+                    <div className="figma-learning-card-header">
+                      <span className="figma-learning-icon-badge">
+                        <EventManagement width="18" height="18" />
+                      </span>
+                      <h3 className="figma-learning-card-title">{LEARNING_WORKS.formats.title}</h3>
+                    </div>
+                    <ul className="figma-learning-bullets">
+                      {LEARNING_WORKS.formats.bullets.map((b) => (
+                        <li key={b}>
+                          <span className="figma-learning-bullet-dot">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="figma-learning-card-footer">
+                      <span>{LEARNING_WORKS.formats.footerLeft}</span>
+                      <span>{LEARNING_WORKS.formats.footerRight}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               5. WHAT YOU'LL GAIN SECTION (FIGMA SPEC)
+               ================================================================ */}
+            <section className="figma-gain-section">
+              <div className="container">
+                <h2 className="figma-gain-title">What you&apos;ll gain</h2>
+                <div className="figma-gain-grid">
+                  {WHAT_YOU_GAIN.map(({ icon: GainIcon, title, desc }, idx) => (
+                    <div
+                      key={title}
+                      className={`figma-gain-col ${idx !== WHAT_YOU_GAIN.length - 1 ? 'has-divider' : ''}`}
+                    >
+                      <span className="figma-gain-icon-badge">
+                        <GainIcon width="20" height="20" />
+                      </span>
+                      <h3 className="figma-gain-col-title">{title}</h3>
+                      <p className="figma-gain-col-desc">{desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               6. VOICES OF LEARNERS SECTION (FIGMA SPEC)
+               ================================================================ */}
+            <section className="container figma-voices-section">
+              <div className="figma-voices-panel">
+                <h2 className="figma-voices-title">Voices of learners</h2>
+
+                <div className="figma-voice-card">
+                  <span className="figma-voice-quote-icon" aria-hidden="true">&ldquo;</span>
+                  <p className="figma-voice-quote">
+                    {VOICES_OF_LEARNERS[activeLearnerIdx].quote}
+                  </p>
+
+                  <div className="figma-voice-author-row">
+                    <span className="figma-voice-avatar">
+                      {VOICES_OF_LEARNERS[activeLearnerIdx].initials}
+                    </span>
+                    <div className="figma-voice-author-meta">
+                      <h4 className="figma-voice-name">{VOICES_OF_LEARNERS[activeLearnerIdx].name}</h4>
+                      <span className="figma-voice-dept">{VOICES_OF_LEARNERS[activeLearnerIdx].dept}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pagination Dots */}
+                <div className="figma-voice-dots">
+                  {VOICES_OF_LEARNERS.map((_, dotIdx) => (
+                    <button
+                      key={dotIdx}
+                      type="button"
+                      aria-label={`Show testimonial ${dotIdx + 1}`}
+                      className={`figma-voice-dot ${dotIdx === activeLearnerIdx ? 'is-active' : ''}`}
+                      onClick={() => setActiveLearnerIdx(dotIdx)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               7. FREQUENTLY ASKED QUESTIONS (FIGMA SPEC)
+               ================================================================ */}
+            <section className="container figma-upskilling-faq-section">
+              <div className="figma-faq-two-col-grid">
+                {/* Left Column */}
+                <div className="figma-faq-left-info">
+                  <h2 className="figma-faq-heading">Frequently Asked<br />Questions</h2>
+                  <p className="figma-faq-lead">
+                    Everything you need to know about our faculty bootcamps, executive tracks, certification validity, and publishing pipelines.
+                  </p>
+
+                  <div className="figma-faq-callout-card">
+                    <div className="figma-faq-callout-header">
+                      <OpenBook width="16" height="16" />
+                      <span>Need a private syllabus?</span>
+                    </div>
+                    <p className="figma-faq-callout-text">
+                      Our academic leads provide custom course mappings for accredited institutions and colleges.
+                    </p>
+                    <a
+                      href="#contact"
+                      className="figma-faq-callout-link"
+                      onClick={scrollToContact}
+                    >
+                      <span>Speak to an Adviser</span>
+                      <ArrowRight width="11" height="11" strokeWidth={2.4} />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Column: Accordion */}
+                <div className="figma-faq-right-accordion">
+                  {UPSKILLING_FAQS.map((faq, idx) => {
+                    const isOpen = openUpskillingFaq === idx
+                    return (
+                      <div key={faq.q} className={`figma-faq-row ${isOpen ? 'is-open' : ''}`}>
+                        <button
+                          type="button"
+                          className="figma-faq-row-btn"
+                          aria-expanded={isOpen}
+                          onClick={() => setOpenUpskillingFaq((prev) => (prev === idx ? null : idx))}
+                        >
+                          <span className="figma-faq-q-text">{faq.q}</span>
+                          <span className={`figma-faq-toggle-icon ${isOpen ? 'is-open' : ''}`}>
+                            {isOpen ? '−' : '+'}
+                          </span>
+                        </button>
+                        {isOpen && (
+                          <div className="figma-faq-row-answer">
+                            <p>{faq.a}</p>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </section>
+
+            {/* ================================================================
+               8. CTA BANNER (FIGMA SPEC)
+               ================================================================ */}
+            <section className="container figma-cta-section">
+              <div className="figma-cta-banner">
+                <h2>Ready to protect your brand and creative work?</h2>
+                <p>Talk to our team about trademark and copyright registration support.</p>
+                <a
+                  href="#contact"
+                  className="btn-figma-cta-white"
+                  onClick={scrollToContact}
+                >
+                  <span>Get Started</span>
+                  <span className="figma-cta-arrow-circle">
+                    <ArrowRight width="13" height="13" strokeWidth={2.6} />
+                  </span>
+                </a>
+              </div>
+            </section>
+        </>
       ) : (
         /* ====================================================================
-           STANDARD LAYOUT FOR OTHER 6 SERVICES
+           STANDARD LAYOUT FOR OTHER 5 SERVICES
            ==================================================================== */
         <>
           <section className="service-hero">
@@ -490,7 +1097,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
           <div className="container service-main-container">
             <div className="service-content-grid">
               <div className="service-primary-content">
-                <section className="service-card-section">
+                <section className="service-card-section" id="upskilling-overview">
                   <h2 className="section-subtitle">Service Overview</h2>
                   <p className="service-overview-text">{service.overview}</p>
 
