@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import textbookBookMockup from '../../assets/images/textbook-anaimalai-book.png'
 import textbookHeroImg from '../../assets/images/textbook-hero-finance-city.png'
+import educationEventImage from '../../assets/images/education-event-conference.png'
 import upskillingHeroBooks from '../../assets/images/upskilling-hero-books-hd.png'
 import upskillingMeetingImg from '../../assets/images/upskilling-educators-meeting-hd.png'
 import {
@@ -24,6 +25,7 @@ import { CONTACT } from '../../data/contact.js'
 import { SERVICES } from '../../data/services.js'
 import TrademarkServiceContent from './TrademarkServiceContent.jsx'
 import ScopusServiceContent from './ScopusServiceContent.jsx'
+import IEEEServiceContent from './IEEEServiceContent.jsx'
 import './ServiceDetail.css'
 
 const OVERVIEW_PILLS = [
@@ -72,6 +74,201 @@ const AUDIENCE_PILLS = [
   'Training institutes',
   'Subject experts',
   'Departments preparing course books',
+]
+
+const EVENT_LIFECYCLE = [
+  {
+    step: 'A',
+    title: 'Before the event',
+    items: [
+      'Theme development, keynote outreach, and call-for-papers (CFP) drafting',
+      'Submission portal setup, review workflow, and author communications',
+      'Sponsor materials, delegate registration, and payment-provider coordination',
+      'Venue layout, audiovisual and stage planning, and vendor coordination',
+    ],
+  },
+  {
+    step: 'B',
+    title: 'During the event',
+    items: [
+      'On-site registration, attendee check-in, and speaker support',
+      'Multi-track session timing, audiovisual coordination, and live Q&A support',
+      'Hybrid streaming setup, remote presenter coordination, and session recording',
+      'Event photography, session notes, and approved event communications',
+    ],
+  },
+  {
+    step: 'C',
+    title: 'After the event',
+    items: [
+      'Proceedings compilation and coordination of ISBN or DOI requests where applicable',
+      'Digital or printed certificates for delegates and speakers',
+      'Budget closeout, utilization records, and vendor reconciliation support',
+      'Outcome report, feedback summary, and event recording handoff',
+    ],
+  },
+]
+
+const EVENT_PROCESS_STEPS = [
+  {
+    step: '01',
+    stage: 'STAGE 01',
+    title: 'Concept & Scope',
+    description: 'Objective, budget, and event date finalization.',
+  },
+  {
+    step: '02',
+    stage: 'STAGE 02',
+    title: 'Committee & CFPs',
+    description: 'Advisory board coordination and CFP rollout.',
+  },
+  {
+    step: '03',
+    stage: 'STAGE 03',
+    title: 'Peer Review',
+    description: 'Double-blind review coordination and committee acceptance decisions.',
+  },
+  {
+    step: '04',
+    stage: 'STAGE 04',
+    title: 'Delegate Reg.',
+    description: 'Ticketing, logistics, and delegate kit coordination.',
+  },
+  {
+    step: '05',
+    stage: 'STAGE 05',
+    title: 'Dry Run & AV',
+    description: 'Stage rehearsal, technical checks, and portal dry runs.',
+  },
+  {
+    step: '06',
+    stage: 'STAGE 06',
+    title: 'Event Execution',
+    description: 'On-ground coordination and agreed hybrid support.',
+  },
+  {
+    step: '07',
+    stage: 'STAGE 07',
+    title: 'Proceedings',
+    description: 'Proceedings compilation, ISBN release coordination, and NAAC dossier support where applicable.',
+  },
+]
+
+const EVENT_FORMATS = {
+  'in-person': {
+    label: 'In-person',
+    description:
+      'Immersive on-campus academic events designed for networking, engaging plenary sessions, and in-person participation.',
+    features: [
+      {
+        icon: EventManagement,
+        title: 'Campus Venue Optimization',
+        description: 'Auditorium layout, poster-gallery setup, and hospitality coordination.',
+      },
+      {
+        icon: CheckCircle,
+        title: 'Physical Delegate Experience',
+        description: 'Conference kits, custom lanyards, printed materials, and book-stall coordination.',
+      },
+      {
+        icon: NetworkNodes,
+        title: 'Direct Academic Camaraderie',
+        description: 'Networking lunches, roundtable discussions, and academic meetups.',
+      },
+    ],
+  },
+  online: {
+    label: 'Online',
+    description:
+      'Accessible virtual academic events designed for remote participation, clear sessions, and audience engagement.',
+    features: [
+      {
+        icon: NetworkNodes,
+        title: 'Virtual Session Production',
+        description: 'Speaker scheduling, technical checks, moderated Q&A, and session hosting.',
+      },
+      {
+        icon: Mail,
+        title: 'Digital Delegate Experience',
+        description: 'Online registration support, digital handbooks, and attendance coordination.',
+      },
+      {
+        icon: Users,
+        title: 'Remote Networking',
+        description: 'Breakout sessions, virtual poster presentations, and facilitated discussions.',
+      },
+    ],
+  },
+  hybrid: {
+    label: 'Hybrid',
+    description:
+      'A coordinated campus and online experience with shared sessions and support for every delegate.',
+    features: [
+      {
+        icon: EventManagement,
+        title: 'Unified Session Production',
+        description: 'Coordinate room AV, streaming, speakers, and Q&A across formats.',
+      },
+      {
+        icon: Users,
+        title: 'Connected Delegate Experience',
+        description: 'On-site check-in, remote access guidance, and shared digital materials.',
+      },
+      {
+        icon: NetworkNodes,
+        title: 'Hybrid Networking',
+        description: 'Plan moderated discussions and networking moments for both audiences.',
+      },
+    ],
+  },
+}
+
+const EVENT_PUBLISHING_CARDS = [
+  {
+    title: 'Publishing support',
+    subtitle: 'Turn presented research into permanent scholarly assets.',
+    icon: OpenBook,
+    bullets: [
+      'Edited book volumes with official Indian & International ISBN allocation.',
+      'Scopus, WoS, and UGC-CARE indexing strategy and journal collaboration tie-ups.',
+      'Professional typesetting, interior typography, and academic cover design by Zedd 3+ editorial press.',
+      'Print-on-demand author copies delivered to key delegates, libraries, and institutional archives.',
+    ],
+  },
+  {
+    title: 'Documentation & Accreditation',
+    subtitle: 'Audit-ready evidence dossiers tailored for NAAC, NIRF, and NBA.',
+    icon: CheckCircle,
+    bullets: [
+      'Complete conference proceedings booklet formatted with abstracts and author bios.',
+      'Cryptographically verifiable digital certificates with unique QR verification codes.',
+      'Comprehensive event outcome metrics, participant demographics, and feedback sentiment analytics.',
+      'Archival high-resolution photo/video repository cataloged by track and session.',
+    ],
+  },
+]
+
+const EVENT_FAQS = [
+  {
+    q: 'What kinds of academic events can you support?',
+    a: 'We support conferences, symposia, Faculty Development Programs, workshops, and hackathons for universities and higher education institutions.',
+  },
+  {
+    q: 'Can you coordinate in-person, online, and hybrid events?',
+    a: 'Yes. We plan event delivery for in-person, online, or hybrid formats based on your objectives, audience, and agreed scope.',
+  },
+  {
+    q: 'Do you manage paper submissions and peer review?',
+    a: 'We can coordinate submission portals, reviewer workflows, and author communications. Final review and acceptance decisions remain with the event committee.',
+  },
+  {
+    q: 'Can you help with proceedings, ISBNs, and certificates?',
+    a: 'We support proceedings preparation, certificate coordination, and ISBN requests where applicable. Issuance depends on the relevant publisher and registration process.',
+  },
+  {
+    q: 'Do you guarantee indexing or accreditation outcomes?',
+    a: 'No. Indexing and accreditation decisions are made by independent organizations. We can help coordinate documentation and prepare materials for review.',
+  },
 ]
 
 const AUDIENCE_CARDS = [
@@ -319,6 +516,8 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   const [upskillingTab, setUpskillingTab] = useState('educators')
   const [activeLearnerIdx, setActiveLearnerIdx] = useState(0)
   const [openUpskillingFaq, setOpenUpskillingFaq] = useState(0)
+  const [activeEventFormat, setActiveEventFormat] = useState('in-person')
+  const [openEventFaq, setOpenEventFaq] = useState(0)
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -343,6 +542,11 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToEventTypes = (e) => {
+    e.preventDefault()
+    document.getElementById('education-event-types')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const toggleFaq = (idx) => {
     setOpenFaq((prev) => (prev === idx ? null : idx))
   }
@@ -351,7 +555,10 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   const isUpskilling = service.id === 'professional-upskilling-services'
   const isTrademarkService = service.id === 'trademarks-copyright-services'
   const isScopusService = service.id === 'scopus-indexed-book-chapters'
+  const isIEEEService = service.id === 'ieee-conference-publications'
+  const isEducationalEvent = service.id === 'educational-event-management'
   const Icon = service.icon
+  const selectedEventFormat = EVENT_FORMATS[activeEventFormat]
 
   if (isTrademarkService) {
     return (
@@ -369,8 +576,18 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     )
   }
 
+  if (isIEEEService) {
+    return (
+      <article className="service-detail-page ieee-service-detail-page">
+        <IEEEServiceContent service={service} onNavigate={onNavigate} />
+      </article>
+    )
+  }
+
   return (
-    <article className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''} ${isUpskilling ? 'is-upskilling-page' : ''}`}>
+    <article
+      className={`service-detail-page ${isTextbook ? 'is-textbook-page' : ''} ${isUpskilling ? 'is-upskilling-page' : ''} ${isEducationalEvent ? 'is-educational-event-page' : ''}`}
+    >
       {isTextbook ? (
         /* ====================================================================
            TEXTBOOK PUBLICATIONS: 100% COMPLETE FIGMA SPECIFICATION (IN ORDER)
@@ -1072,49 +1289,277 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
            STANDARD LAYOUT FOR OTHER 5 SERVICES
            ==================================================================== */
         <>
-          <section className="service-hero">
-            <div className="container">
-              <nav className="breadcrumb" aria-label="Breadcrumb">
-                <a
-                  href="#home"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    if (onNavigate) onNavigate('home', '#home')
-                    else window.location.hash = '#home'
-                  }}
-                >
-                  Home
-                </a>
-                <span className="bc-sep">/</span>
-                <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    if (onNavigate) onNavigate('home', '#services')
-                    else window.location.hash = '#services'
-                  }}
-                >
-                  Services
-                </a>
-                <span className="bc-sep">/</span>
-                <span className="bc-current">{service.title}</span>
-              </nav>
+          {isEducationalEvent ? (
+            <section className="education-event-hero">
+              <div className="container">
+                <nav className="education-event-breadcrumb" aria-label="Breadcrumb">
+                  <a
+                    href="#home"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#home')
+                      else window.location.hash = '#home'
+                    }}
+                  >
+                    Home
+                  </a>
+                  <span aria-hidden="true">&rsaquo;</span>
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#services')
+                      else window.location.hash = '#services'
+                    }}
+                  >
+                    Services
+                  </a>
+                  <span aria-hidden="true">&rsaquo;</span>
+                  <span aria-current="page">{service.title}</span>
+                </nav>
 
-              <div className="service-hero-content">
-                <div className="service-hero-heading">
-                  <span className="service-hero-icon">
-                    <Icon width="34" height="34" />
-                  </span>
-                  <div>
-                    <h1>{service.title}</h1>
-                    <p className="service-hero-tagline">{service.text}</p>
+                <div className="education-event-hero-grid">
+                  <div className="education-event-hero-copy">
+                    <span className="education-event-eyebrow">EDUCATION EVENT MANAGEMENT</span>
+                    <h1>
+                      Your <span>Event.</span> Your <span>Impact.</span>
+                    </h1>
+                    <p>
+                      We plan and coordinate conferences, faculty development
+                      programs, and workshops, so your team can focus on learning
+                      while event details stay organized.
+                    </p>
+                    <div className="education-event-actions">
+                      <a
+                        href="#contact"
+                        className="education-event-button is-primary"
+                        onClick={scrollToContact}
+                      >
+                        Plan Your Events
+                        <span><ArrowRight width="14" height="14" /></span>
+                      </a>
+                      <a
+                        href="#education-event-types"
+                        className="education-event-button is-outline"
+                        onClick={scrollToEventTypes}
+                      >
+                        View Event Types
+                      </a>
+                    </div>
+                    <ul className="education-event-highlights">
+                      <li><CheckCircle width="14" height="14" />End-to-end coordination</li>
+                      <li><CheckCircle width="14" height="14" />Proceedings &amp; certificates</li>
+                      <li><CheckCircle width="14" height="14" />On-campus &amp; online execution</li>
+                    </ul>
+                  </div>
+
+                  <div className="education-event-visual">
+                    <img
+                      src={educationEventImage}
+                      alt="Academic symposium with an event presenter and attendees"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          ) : (
+            <section className="service-hero">
+              <div className="container">
+                <nav className="breadcrumb" aria-label="Breadcrumb">
+                  <a
+                    href="#home"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#home')
+                      else window.location.hash = '#home'
+                    }}
+                  >
+                    Home
+                  </a>
+                  <span className="bc-sep">/</span>
+                  <a
+                    href="#services"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      if (onNavigate) onNavigate('home', '#services')
+                      else window.location.hash = '#services'
+                    }}
+                  >
+                    Services
+                  </a>
+                  <span className="bc-sep">/</span>
+                  <span className="bc-current">{service.title}</span>
+                </nav>
 
-          <div className="container service-main-container">
+                <div className="service-hero-content">
+                  <div className="service-hero-heading">
+                    <span className="service-hero-icon">
+                      <Icon width="34" height="34" />
+                    </span>
+                    <div>
+                      <h1>{service.title}</h1>
+                      <p className="service-hero-tagline">{service.text}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {isEducationalEvent && (
+            <section className="education-event-lifecycle" aria-labelledby="education-event-lifecycle-title">
+              <div className="container">
+                <div className="education-event-lifecycle-content">
+                  <div className="education-event-lifecycle-heading">
+                    <h2 id="education-event-lifecycle-title">
+                      One team, from first idea to final report
+                    </h2>
+                    <p>
+                      Comprehensive pre-event, live-event, and post-event
+                      coordination.
+                    </p>
+                  </div>
+                  <div className="education-event-phases">
+                    {EVENT_LIFECYCLE.map((phase) => (
+                      <div className="education-event-phase" key={phase.step}>
+                        <div className="education-event-phase-heading">
+                          <span>{phase.step}</span>
+                          <h3>{phase.title}</h3>
+                        </div>
+                        <ul>
+                          {phase.items.map((item) => (
+                            <li key={item}>
+                              <CheckCircle width="13" height="13" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {isEducationalEvent && (
+            <section className="education-event-process" aria-labelledby="education-event-process-title">
+              <div className="container">
+                <div className="education-event-process-content">
+                  <div className="education-event-process-heading">
+                    <h2 id="education-event-process-title">Event planning process</h2>
+                    <p>
+                      A structured seven-milestone roadmap from conceptual
+                      blueprint through post-symposium publishing.
+                    </p>
+                  </div>
+                  <ol className="education-event-timeline">
+                    {EVENT_PROCESS_STEPS.map((item) => (
+                      <li key={item.step}>
+                        <span className="education-event-step-number">{item.step}</span>
+                        <div className="education-event-step-copy">
+                          <span className="education-event-step-stage">{item.stage}</span>
+                          <h3>{item.title}</h3>
+                          <p>{item.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {isEducationalEvent && (
+            <section
+              className="education-event-formats"
+              id="education-event-types"
+              aria-labelledby="education-event-formats-title"
+            >
+              <div className="container">
+                <div className="education-event-formats-content">
+                  <h2 id="education-event-formats-title">Event formats</h2>
+                  <div className="education-event-format-controls" role="group" aria-label="Choose an event format">
+                    {Object.entries(EVENT_FORMATS).map(([formatId, format]) => (
+                      <button
+                        key={formatId}
+                        type="button"
+                        aria-pressed={activeEventFormat === formatId}
+                        className={activeEventFormat === formatId ? 'is-active' : ''}
+                        onClick={() => setActiveEventFormat(formatId)}
+                      >
+                        {format.label}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="education-event-format-card" aria-live="polite">
+                    <p className="education-event-format-description">
+                      {selectedEventFormat.description}
+                    </p>
+                    <div className="education-event-format-features">
+                      {selectedEventFormat.features.map(({ icon: FeatureIcon, title, description }) => (
+                        <article key={title}>
+                          <span className="education-event-format-icon">
+                            <FeatureIcon width="12" height="12" />
+                          </span>
+                          <div>
+                            <h3>{title}</h3>
+                            <p>{description}</p>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {isEducationalEvent && (
+            <section
+              className="education-event-publishing"
+              aria-labelledby="education-event-publishing-title"
+            >
+              <div className="container">
+                <div className="education-event-publishing-content">
+                  <header className="education-event-publishing-heading">
+                    <h2 id="education-event-publishing-title">
+                      Publishing Support &amp; Documentation
+                    </h2>
+                    <p>
+                      Bridging physical event logistics with permanent archival
+                      academic literature.
+                    </p>
+                  </header>
+                  <div className="education-event-publishing-grid">
+                    {EVENT_PUBLISHING_CARDS.map(
+                      ({ title, subtitle, icon: CardIcon, bullets }) => (
+                        <article className="education-event-publishing-card" key={title}>
+                          <header className="education-event-publishing-card-heading">
+                            <span aria-hidden="true">
+                              <CardIcon width="16" height="16" />
+                            </span>
+                            <div>
+                              <h3>{title}</h3>
+                              <p>{subtitle}</p>
+                            </div>
+                          </header>
+                          <ul>
+                            {bullets.map((bullet) => (
+                              <li key={bullet}>{bullet}</li>
+                            ))}
+                          </ul>
+                        </article>
+                      ),
+                    )}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {!isEducationalEvent && (
+            <div className="container service-main-container">
             <div className="service-content-grid">
               <div className="service-primary-content">
                 <section className="service-card-section" id="upskilling-overview">
@@ -1152,20 +1597,22 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                   </div>
                 </section>
 
-                <section className="service-card-section">
-                  <h2 className="section-subtitle">Our Proven Step-by-Step Workflow</h2>
-                  <div className="workflow-steps">
-                    {service.steps.map((st) => (
-                      <div key={st.step} className="workflow-step-card">
-                        <div className="step-num">{st.step}</div>
-                        <div className="step-content">
-                          <h4>{st.title}</h4>
-                          <p>{st.desc}</p>
+                {!isEducationalEvent && (
+                  <section className="service-card-section">
+                    <h2 className="section-subtitle">Our Proven Step-by-Step Workflow</h2>
+                    <div className="workflow-steps">
+                      {service.steps.map((st) => (
+                        <div key={st.step} className="workflow-step-card">
+                          <div className="step-num">{st.step}</div>
+                          <div className="step-content">
+                            <h4>{st.title}</h4>
+                            <p>{st.desc}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
+                      ))}
+                    </div>
+                  </section>
+                )}
 
                 <section className="service-card-section">
                   <h2 className="section-subtitle">Why Partner with Zedd 3+ Books?</h2>
@@ -1292,10 +1739,12 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                 </div>
               </aside>
             </div>
-          </div>
+            </div>
+          )}
 
           {/* Other Services Navigation Grid (Only on other 6 services) */}
-          <section className="container other-services-section">
+          {!isEducationalEvent && (
+            <section className="container other-services-section">
             <div className="other-services-header">
               <div>
                 <span className="accent-label">Explore More</span>
@@ -1343,7 +1792,96 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                 )
               })}
             </div>
-          </section>
+            </section>
+          )}
+
+          {isEducationalEvent && (
+            <>
+              <section className="container education-event-faq-section">
+                <div className="figma-faq-two-col-grid">
+                  <div className="figma-faq-left-info">
+                    <h2 className="figma-faq-heading">
+                      Frequently Asked<br />Questions
+                    </h2>
+                    <p className="figma-faq-lead">
+                      Everything you need to know about planning academic
+                      conferences, faculty programs, workshops, and event
+                      documentation.
+                    </p>
+                    <div className="figma-faq-callout-card">
+                      <div className="figma-faq-callout-header">
+                        <EventManagement width="16" height="16" />
+                        <span>Planning a tailored event?</span>
+                      </div>
+                      <p className="figma-faq-callout-text">
+                        Our team can help shape your event format, timeline,
+                        and coordination requirements.
+                      </p>
+                      <a
+                        href="#contact"
+                        className="figma-faq-callout-link"
+                        onClick={scrollToContact}
+                      >
+                        <span>Speak to an Event Advisor</span>
+                        <ArrowRight width="11" height="11" strokeWidth={2.4} />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="figma-faq-right-accordion">
+                    {EVENT_FAQS.map((faq, idx) => {
+                      const isOpen = openEventFaq === idx
+                      return (
+                        <div
+                          key={faq.q}
+                          className={`figma-faq-row ${isOpen ? 'is-open' : ''}`}
+                        >
+                          <button
+                            type="button"
+                            className="figma-faq-row-btn"
+                            aria-expanded={isOpen}
+                            onClick={() =>
+                              setOpenEventFaq((previous) =>
+                                previous === idx ? null : idx,
+                              )
+                            }
+                          >
+                            <span className="figma-faq-q-text">{faq.q}</span>
+                            <span
+                              className={`figma-faq-toggle-icon ${isOpen ? 'is-open' : ''}`}
+                              aria-hidden="true"
+                            >
+                              {isOpen ? '−' : '+'}
+                            </span>
+                          </button>
+                          {isOpen && (
+                            <div className="figma-faq-row-answer">
+                              <p>{faq.a}</p>
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </section>
+              <section className="container figma-cta-section education-event-cta-section">
+                <div className="figma-cta-banner">
+                  <h2>Plan Your Events</h2>
+                  <p>Talk to our team about event organizing support.</p>
+                  <a
+                    href="#contact"
+                    className="btn-figma-cta-white"
+                    onClick={scrollToContact}
+                  >
+                    <span>Get Started</span>
+                    <span className="figma-cta-arrow-circle">
+                      <ArrowRight width="13" height="13" strokeWidth={2.6} />
+                    </span>
+                  </a>
+                </div>
+              </section>
+            </>
+          )}
         </>
       )}
     </article>
