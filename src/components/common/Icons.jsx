@@ -91,6 +91,49 @@ export const Target = (p) => (
   </svg>
 )
 
+export const Flag = (p) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" {...base} strokeWidth={2} {...p}>
+    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+    <line x1="4" y1="22" x2="4" y2="15" />
+  </svg>
+)
+
+export const DraftingCompass = (p) => (
+  <svg viewBox="0 0 24 24" width="14" height="14" {...base} strokeWidth={2} {...p}>
+    <circle cx="12" cy="5" r="2" />
+    <path d="m3 21 8.02-14.26M21 21l-8.02-14.26" />
+    <path d="M6 15h12" />
+  </svg>
+)
+
+export const Rocket = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+    <path d="M9 12H4s.55-3.03 2-4.5c1.62-1.63 5-2.5 5-2.5" />
+    <path d="M12 15v5s3.03-.55 4.5-2c1.63-1.62 2.5-5 2.5-5" />
+  </svg>
+)
+
+export const Microscope = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <path d="M6 18h8" />
+    <path d="M3 22h18" />
+    <path d="M14 22a7 7 0 1 0 0-14h-1" />
+    <path d="M9 14h2" />
+    <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
+    <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
+  </svg>
+)
+
+export const Cpu = (p) => (
+  <svg viewBox="0 0 24 24" width="20" height="20" {...base} strokeWidth={2} {...p}>
+    <rect x="4" y="4" width="16" height="16" rx="2" />
+    <rect x="9" y="9" width="6" height="6" />
+    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+  </svg>
+)
+
 export const Manuscript = (p) => (
   <svg viewBox="0 0 24 24" width="28" height="28" {...base} {...p}>
     <path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z" />

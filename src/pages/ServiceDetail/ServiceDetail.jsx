@@ -26,6 +26,7 @@ import { SERVICES } from '../../data/services.js'
 import TrademarkServiceContent from './TrademarkServiceContent.jsx'
 import ScopusServiceContent from './ScopusServiceContent.jsx'
 import IEEEServiceContent from './IEEEServiceContent.jsx'
+import PatentServiceContent from './PatentServiceContent.jsx'
 import './ServiceDetail.css'
 
 const OVERVIEW_PILLS = [
@@ -557,6 +558,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   const isScopusService = service.id === 'scopus-indexed-book-chapters'
   const isIEEEService = service.id === 'ieee-conference-publications'
   const isEducationalEvent = service.id === 'educational-event-management'
+  const isPatentService = service.id === 'patent-grant-support'
   const Icon = service.icon
   const selectedEventFormat = EVENT_FORMATS[activeEventFormat]
 
@@ -580,6 +582,14 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     return (
       <article className="service-detail-page ieee-service-detail-page">
         <IEEEServiceContent service={service} onNavigate={onNavigate} />
+      </article>
+    )
+  }
+
+  if (isPatentService) {
+    return (
+      <article className="service-detail-page patent-service-detail-page">
+        <PatentServiceContent service={service} onNavigate={onNavigate} />
       </article>
     )
   }
