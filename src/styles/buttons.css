@@ -1,76 +1,108 @@
-/* Pill buttons used across the site */
+/* ==========================================================================
+   PREMIUM BUTTON STYLES
+   ========================================================================== */
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 999px;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
   border: 1.5px solid transparent;
+  font-family: var(--font-sans);
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
+  letter-spacing: 0.2px;
   white-space: nowrap;
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease,
+    transform 0.26s var(--ease-spring),
+    background-color 0.26s var(--ease-smooth),
+    border-color 0.26s var(--ease-smooth),
+    box-shadow 0.26s var(--ease-spring),
     color 0.2s ease;
 }
 
 .btn svg {
-  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  transition: transform 0.26s var(--ease-spring);
 }
 
 .btn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary Button: Imperial Maroon with velvet depth */
 .btn-primary {
-  background: var(--maroon);
-  color: #fff;
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(150, 0, 24, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .btn-primary:hover {
-  background: var(--maroon-dark);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--maroon-light) 0%, var(--maroon) 100%);
+  box-shadow: 0 8px 24px rgba(150, 0, 24, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  color: #ffffff;
 }
 
+/* Outline Button: Crisp, elegant hair-line border with cream backdrop */
 .btn-outline {
-  border-color: var(--maroon);
+  border-color: rgba(150, 0, 24, 0.6);
   color: var(--maroon);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(60, 30, 20, 0.04);
 }
 
 .btn-outline:hover {
   background: var(--maroon);
-  color: #fff;
+  border-color: var(--maroon);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(150, 0, 24, 0.25);
+  transform: translateY(-2px);
 }
 
+/* Light Button: Luxury Pearl / Alabaster button */
 .btn-light {
-  background: #fff;
+  background: #ffffff;
   color: var(--maroon);
-  font-weight: 600;
+  border-color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
 }
 
 .btn-light:hover {
   background: var(--cream);
-  transform: translateY(-1px);
+  color: var(--maroon-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 .btn-sm {
-  padding: 10px 20px;
+  padding: 10.5px 22px;
   font-size: 13.5px;
+  gap: 8px;
 }
 
 .btn-block {
   width: 100%;
-  padding: 10px 16px;
+  padding: 11px 18px;
   font-size: 13.5px;
 }
 
 .btn-row {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 16px;
 }

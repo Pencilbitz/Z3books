@@ -1,7 +1,16 @@
-/* Shared layout helpers and section headings */
+/* ==========================================================================
+   SHARED LAYOUT HELPERS & EDITORIAL SECTION HEADINGS
+   ========================================================================== */
+
 .container {
-  width: min(1120px, 100% - 40px);
+  width: min(1180px, 100% - 48px);
   margin-inline: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 32px, 1180px);
+  }
 }
 
 .center {
@@ -13,29 +22,33 @@
   color: var(--maroon);
 }
 
-/* Underlined section heading, as in the design */
+/* Elegant editorial section title */
 .u-title {
   position: relative;
   display: inline-block;
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
-  font-weight: 700;
-  padding-bottom: 6px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  padding-bottom: 12px;
 }
 
 .u-title::after {
   content: '';
   position: absolute;
-  left: 18%;
-  right: 18%;
+  left: 20%;
+  right: 20%;
   bottom: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--ink);
+  height: 2.5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--maroon) 25%, var(--rust) 75%, transparent);
 }
 
 .center-title {
   display: table;
-  margin: 0 auto 32px;
+  margin: 0 auto 36px;
   text-align: center;
 }
 

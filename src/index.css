@@ -1,20 +1,58 @@
 :root {
+  /* Brand Luxury Palette */
   --maroon: #960018;
   --maroon-dark: #7a0014;
+  --maroon-light: #b01229;
+  --maroon-tint: rgba(150, 0, 24, 0.08);
+  --maroon-glow: rgba(150, 0, 24, 0.22);
   --rust: #b24b3a;
-  --cream: #f3e9dd;
-  --cream-2: #f4ebe0;
+  --rust-dark: #8e3627;
+  --cream: #faf5ee; /* refined luxury alabaster / warm ivory */
+  --cream-2: #f3eae0; /* warm parchment */
+  --cream-3: #eee1d3;
   --tan: #d7b89c;
+  --tan-light: #ebd8c8;
+  --tan-dark: #bf9b7b;
   --peach: #f6dabf;
   --peach-2: #e3b893;
-  --ink: #1d1416;
-  --text: #3a2f31;
-  --muted: #6b5d5f;
+  --ink: #1c1416;
+  --ink-light: #2b1f22;
+  --text: #3d3235;
+  --muted: #6e5f62;
+  --muted-light: #948588;
   --card: #ffffff;
-  --shadow-sm: 0 4px 12px rgba(90, 50, 30, 0.08);
-  --shadow-md: 0 12px 28px rgba(90, 50, 30, 0.18);
-  --radius: 10px;
-  --font: 'Poppins', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  /* Luxury Champagne & Gold Accents */
+  --gold: #c5934b;
+  --gold-light: #dfb273;
+  --gold-dark: #9e7030;
+  --gold-tint: rgba(197, 147, 75, 0.12);
+
+  /* Elevation Shadows (Warm, Multi-layered, Ultra-diffused) */
+  --shadow-xs: 0 1px 3px rgba(60, 30, 20, 0.04);
+  --shadow-sm: 0 4px 14px rgba(60, 30, 20, 0.06), 0 1px 3px rgba(60, 30, 20, 0.03);
+  --shadow-md: 0 12px 30px rgba(60, 30, 20, 0.09), 0 3px 8px rgba(60, 30, 20, 0.04);
+  --shadow-lg: 0 20px 48px -6px rgba(60, 30, 20, 0.12), 0 6px 16px rgba(60, 30, 20, 0.05);
+  --shadow-xl: 0 32px 64px -12px rgba(60, 30, 20, 0.18), 0 12px 24px rgba(60, 30, 20, 0.07);
+  --shadow-glow: 0 0 28px rgba(150, 0, 24, 0.18);
+
+  /* Radius System */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+
+  /* Typography System */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font: var(--font-sans);
+
+  /* Motion Timing */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
 
   color-scheme: light;
   font-family: var(--font);
@@ -22,6 +60,7 @@
   line-height: 1.6;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
@@ -33,13 +72,20 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 88px;
 }
 
 body {
   margin: 0;
   background: var(--cream);
+  color: var(--text);
   overflow-x: hidden;
+  selection-background-color: var(--peach-2);
+}
+
+::selection {
+  background: rgba(150, 0, 24, 0.15);
+  color: var(--maroon);
 }
 
 h1,
@@ -48,8 +94,10 @@ h3,
 h4 {
   margin: 0;
   color: var(--ink);
+  font-family: var(--font-serif);
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 p {
@@ -80,6 +128,26 @@ button {
 :focus-visible {
   outline: 2px solid var(--maroon);
   outline-offset: 3px;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tan);
+  border-radius: 999px;
+  border: 2px solid var(--cream-2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rust);
 }
 
 @media (prefers-reduced-motion: reduce) {

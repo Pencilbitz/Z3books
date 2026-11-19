@@ -1,3 +1,7 @@
+/* ==========================================================================
+   PREMIUM ABOUT US SECTION
+   ========================================================================== */
+
 /* The team photo (about-team-bg.webp, 2023 × 777) fills the section at its exact
    proportions. The team sits in the left half; the text sits in the right half. */
 .about {
@@ -13,6 +17,7 @@
   background-position: left top;
   background-size: 100% auto;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(60, 30, 20, 0.06);
 }
 
 /* Layer the same size as the photo; icons are placed in photo percentages */
@@ -32,12 +37,13 @@
   width: 100%;
   height: 100%;
   overflow: visible;
+  filter: drop-shadow(0 2px 6px rgba(150, 0, 24, 0.2));
 }
 
 .about-art > svg path {
   fill: none;
   stroke: var(--rust);
-  stroke-width: 2.5;
+  stroke-width: 2.8;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
@@ -46,13 +52,27 @@
   position: absolute;
   display: grid;
   place-items: center;
-  width: clamp(40px, 4.7vw, 72px);
+  width: clamp(42px, 4.8vw, 74px);
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1.5px solid var(--rust);
-  background: #f1d2b4;
-  color: var(--rust);
+  border: 2px solid rgba(178, 75, 58, 0.7);
+  background: rgba(246, 218, 191, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--maroon);
   transform: translate(-50%, -50%);
+  box-shadow:
+    0 8px 24px rgba(90, 50, 30, 0.18),
+    0 0 0 3px rgba(255, 255, 255, 0.4) inset;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+  pointer-events: auto;
+}
+
+.arc-icon:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow:
+    0 12px 30px rgba(150, 0, 24, 0.3),
+    0 0 0 3px rgba(255, 255, 255, 0.6) inset;
 }
 
 .arc-icon svg {
@@ -63,32 +83,40 @@
 
 .about-copy {
   position: relative;
-  width: min(500px, 38%);
+  width: min(520px, 39%);
   margin-left: 52.8%;
+  padding-right: 20px;
 }
 
 .about-copy h2 {
-  margin-bottom: clamp(18px, 2.4vw, 34px);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(18px, 2.4vw, 32px);
+  color: var(--ink);
 }
 
 .about-copy p {
-  font-size: clamp(13.5px, 1.15vw, 16px);
-  line-height: 2.1;
-  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.16vw, 16.5px);
+  line-height: 2.05;
+  color: #261a1d;
+  font-weight: 400;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 /* Medium screens: text needs a little more room */
 @media (max-width: 1100px) {
   .about-copy {
-    width: 43%;
+    width: 44%;
   }
   .about-copy p {
     line-height: 1.85;
   }
 }
 
-/* Tablet & mobile: the team shows as a banner on top, text underneath.
-   The photo is shown at 210% width so the team fills the screen. */
+/* Tablet & mobile: the team shows as a banner on top, text underneath. */
 @media (max-width: 900px) {
   .about {
     display: block;
@@ -104,8 +132,8 @@
   }
   .about-copy {
     width: auto;
-    margin: 0 20px;
-    padding: 24px 0 48px;
+    margin: 0 24px;
+    padding: 28px 0 52px;
   }
   .about-copy p {
     font-size: 15px;

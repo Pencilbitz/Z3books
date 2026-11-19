@@ -1,27 +1,57 @@
+/* ==========================================================================
+   PREMIUM 3D BOOK COVER COMPONENT
+   ========================================================================== */
+
 .book-3d {
   position: relative;
-  width: 62%;
+  width: 64%;
   aspect-ratio: 120 / 170;
-  border-radius: 2px 5px 5px 2px;
+  border-radius: 3px 6px 6px 3px;
   overflow: hidden;
   box-shadow:
-    8px 10px 16px rgba(0, 0, 0, 0.3),
-    2px 2px 0 rgba(0, 0, 0, 0.12);
-  transform: perspective(800px) rotateY(-10deg);
+    10px 14px 22px rgba(40, 20, 10, 0.28),
+    2px 2px 0 rgba(40, 20, 10, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+  transform: perspective(900px) rotateY(-8deg) rotateX(1deg);
   transform-origin: left center;
-  transition: transform 0.35s ease;
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease;
 }
 
+/* Book spine depth & crease */
 .book-3d::before {
   content: '';
   position: absolute;
   inset: 0 auto 0 0;
-  width: 10px;
+  width: 12px;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(0, 0, 0, 0.15) 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Subtle book page glossy sheen */
+.book-3d::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.18) 50%, rgba(0, 0, 0, 0.1));
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.05) 56%,
+    transparent 65%
+  );
+  pointer-events: none;
 }
 
 .book-3d svg {
   width: 100%;
   height: 100%;
+  display: block;
 }
