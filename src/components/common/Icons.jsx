@@ -109,6 +109,49 @@ export const Pin = (p) => (
   </svg>
 )
 
+export const Search = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} strokeWidth={2.2} {...p}>
+    <circle cx="10.8" cy="10.8" r="6.8" />
+    <path d="m16 16 5 5" />
+  </svg>
+)
+
+export const FileEdit = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...p}>
+    <path d="M13.5 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7" />
+    <path d="M13 3v5h5M8 12h5M8 16h3" />
+    <path d="m16 17 4.5-4.5a1.4 1.4 0 0 1 2 2L18 21l-3 1z" />
+  </svg>
+)
+
+export const Copyright = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M15.5 9.5a4 4 0 1 0 0 5" />
+  </svg>
+)
+
+export const DocumentCheck = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...p}>
+    <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+    <path d="M14 3v6h6M8 13h5M8 17l2 2 4-4" />
+  </svg>
+)
+
+export const StatusCheck = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...p}>
+    <path d="M8 4h8a2 2 0 0 1 2 2v15H6V6a2 2 0 0 1 2-2z" />
+    <path d="M9 4V2h6v2M9 10h6M9 14l2 2 4-4" />
+  </svg>
+)
+
+export const Bell = (p) => (
+  <svg viewBox="0 0 24 24" width="24" height="24" {...base} {...p}>
+    <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9z" />
+    <path d="M10 21h4" />
+  </svg>
+)
+
 export const Facebook = (p) => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden {...p}>
     <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.25-1.5 1.5-1.5h1.6V4.4a21 21 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z" />
