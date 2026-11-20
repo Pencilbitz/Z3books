@@ -41,12 +41,6 @@ export default function App() {
 
       if (newRoute.page === 'service') {
         window.scrollTo({ top: 0, behavior: 'smooth' })
-      } else if (newRoute.hash && newRoute.hash !== '#home') {
-        const targetId = newRoute.hash.replace('#', '')
-        const targetEl = document.getElementById(targetId)
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth' })
-        }
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' })
       }
@@ -61,22 +55,28 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (route.page === 'home' && route.hash && route.hash !== '#home') {
+      setTimeout(() => {
+        const targetEl = document.getElementById(route.hash.replace('#', ''))
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+    }
+  }, [route.page, route.hash])
+
   const handleNavigate = (page, target) => {
     if (page === 'service') {
       window.location.hash = `#service/${target}`
     } else {
-      window.location.hash = target || '#home'
-      if (route.page === 'service') {
-        // Switching back from service page to home
-        setTimeout(() => {
-          if (target && target !== '#home') {
-            const el = document.getElementById(target.replace('#', ''))
-            if (el) el.scrollIntoView({ behavior: 'smooth' })
-          } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }
-        }, 50)
+      const destination = target || '#home'
+      if (window.location.hash === destination && route.page === 'home') {
+        const targetId = destination.replace('#', '')
+        const targetEl = document.getElementById(targetId)
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' })
+        return
       }
+
+      window.location.hash = destination
     }
   }
 

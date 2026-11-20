@@ -7,6 +7,13 @@ import {
   Textbook,
   Upskilling,
 } from '../components/common/Icons.jsx'
+import textbookCardImage from '../assets/images/textbook-hero-desk-hd.jpg'
+import patentCardImage from '../assets/images/patent-drafting-blueprint.jpg'
+import trademarkCardImage from '../assets/images/trademark-quill.png'
+import ieeeCardImage from '../assets/images/ieee-conference-presenter.png'
+import scopusCardImage from '../assets/images/scopus-volumes-desk.jpg'
+import eventCardImage from '../assets/images/education-event-conference.png'
+import upskillingCardImage from '../assets/images/about-team-bg.webp'
 
 export const SERVICES = [
   {
@@ -15,6 +22,8 @@ export const SERVICES = [
     title: 'Textbook Publications',
     text: 'Editing, ISBN & distribution',
     badge: 'Academic & Higher Education',
+    cardImage: textbookCardImage,
+    cardDetail: 'From editorial review to print-ready pages.',
     overview:
       'We offer comprehensive end-to-end publishing solutions for university professors, research faculty, and academic authors. From technical review and copyediting to official ISBN registration and national distribution across commercial and institutional networks.',
     features: [
@@ -55,6 +64,8 @@ export const SERVICES = [
     title: 'Patent Grant Support',
     text: 'Filing, drafting & prosecution',
     badge: 'Intellectual Property Rights',
+    cardImage: patentCardImage,
+    cardDetail: 'Guidance through search, drafting and filing.',
     overview:
       'End-to-end patent consultancy for innovators, faculty researchers, engineering institutions, and startups. We assist at every stage of the patent lifecycle—from prior art novelty search to drafting technical claims, formal office filings, and hearing responses.',
     features: [
@@ -95,6 +106,8 @@ export const SERVICES = [
     title: 'Trademarks & Copyright Services',
     text: 'Protect your brand & creative work',
     badge: 'Brand & Creative Assets',
+    cardImage: trademarkCardImage,
+    cardDetail: 'Support for protecting original work and identity.',
     overview:
       'Robust legal protection for institutional brand identities, logos, course materials, books, software source code, and artistic content. We manage statutory registrations and dispute defenses to prevent unauthorized copying and infringement.',
     features: [
@@ -135,6 +148,8 @@ export const SERVICES = [
     title: 'IEEE Conference Publications',
     text: 'Papers for IEEE & top-tier conferences',
     badge: 'Peer-Reviewed Conferences',
+    cardImage: ieeeCardImage,
+    cardDetail: 'Editing and formatting for conference requirements.',
     overview:
       'Independent editorial and technical preparation support for scholars submitting their own research to IEEE and other reputable conferences. We can help with formatting, language clarity, submission files, and revisions. Conference acceptance and publication decisions remain with the conference and publisher.',
     features: [
@@ -185,6 +200,8 @@ export const SERVICES = [
     title: 'Scopus-Indexed Book Chapters',
     text: 'Chapters in SCI & Scopus volumes',
     badge: 'Scopus & Web of Science Indexing',
+    cardImage: scopusCardImage,
+    cardDetail: 'Chapter preparation for academic authors.',
     overview:
       'Facilitating publication of contributed scholarly book chapters in edited reference books, handbooks, and monographs brought out by premier global academic publishers including Springer, Elsevier, CRC Press, Taylor & Francis, and Wiley.',
     features: [
@@ -225,6 +242,8 @@ export const SERVICES = [
     title: 'Educational Event Management',
     text: 'Conferences, FDPs & workshops',
     badge: 'Institutional Academic Events',
+    cardImage: eventCardImage,
+    cardDetail: 'Planning and coordination from start to finish.',
     overview:
       'Turnkey management and technical coordination for international conferences, national symposia, Faculty Development Programs (FDPs), workshops, and hackathons for universities and higher education institutions.',
     features: [
@@ -265,6 +284,8 @@ export const SERVICES = [
     title: 'Professional Upskilling Services',
     text: 'Programs for educators & professionals',
     badge: 'Career & Faculty Advancement',
+    cardImage: upskillingCardImage,
+    cardDetail: 'Practical learning for educators and teams.',
     overview:
       'Immersive, outcome-driven professional development masterclasses and certification courses designed specifically for educators, researchers, and technical professionals to master emerging pedagogical methodologies, AI tools, and research frameworks.',
     features: [
